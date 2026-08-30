@@ -43,13 +43,64 @@ form{background:white;border:1px solid var(--line);padding:30px;border-radius:22
 .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.contact{border:1px solid var(--line);border-radius:18px;padding:27px;text-align:center}.contact .icon{margin:auto auto 14px}.contact h3{color:var(--navy)}.contact p{color:var(--muted);font-size:.9rem;margin-top:5px}
 footer{background:#041d3d;color:#c6d7e4;padding:55px 0 20px}.foot{display:grid;grid-template-columns:1.3fr .8fr .8fr;gap:35px}.foot h3{color:white;margin-bottom:12px}.foot a{display:block;margin:8px 0;font-size:.9rem}.foot img{width:85px;border-radius:50%;margin-bottom:10px}.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:18px;text-align:center;font-size:.82rem}
 @media(max-width:900px){.links{display:none;position:absolute;top:78px;left:0;right:0;background:white;padding:22px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.links.show{display:flex}.menu{display:block}.hero-grid,.why-grid,.booking-grid{grid-template-columns:1fr}.booking-copy{position:static}.hero-art{min-height:390px}.cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.stat-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.foot{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){section{padding:64px 0}.cards,.steps,.contact-grid,.form-grid,.foot{grid-template-columns:1fr}.hero-grid{padding:58px 0}.logo-orb{width:270px;height:270px}.hero-art{min-height:340px}.floating{font-size:.74rem}.stat-grid{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}}
+@media(max-width:560px){section{padding:64px 0}.cards,.steps,.contact-grid,.form-grid,.foot{grid-template-columns:1fr}.hero-grid{padding:58px 0}.logo-orb{width:270px;height:270px}.hero-art{min-height:340px}.floating{font-size:.74rem}.stat-grid{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}}.terms-box {margin-top: 10px;}
+.terms-label {display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.terms-label input[type="checkbox"] {
+  margin-top: 5px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.terms-label a {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.booking-success {
+  text-align: center;
+  padding: 40px 25px;
+  margin-top: 20px;
+  border-radius: 18px;
+  background: #f5fbfa;
+  border: 1px solid #d8eeeb;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: bold;
+  background: #e2f5ef;
+}
+
+.booking-success h3 {
+  margin-bottom: 10px;
+}
+
+.booking-success p {
+  max-width: 600px;
+  margin: 8px auto;
+  line-height: 1.6;
+}
 </style>
 </head>
 <body>
 <div class="top"><div class="container"><span>JotnoSetu Home Healthcare • Caring Hearts. Healing Homes.</span><span>📞 Official contact details coming soon</span></div></div>
 <header><div class="container nav">
-<a class="brand" href="#home"><img src="logo.png"><span>JOTNOSETU<small>HOME HEALTHCARE</small></span></a>
+<a class="brand" href="#home"><img src="logo.png"><span>JotnoSetu<small>Home Health Care</small></span></a>
 <button class="menu" onclick="document.querySelector('.links').classList.toggle('show')">☰</button>
 <nav class="links"><a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#booking">Booking</a><a href="#agreement">Agreement</a><a href="#contact">Contact</a><a class="btn primary" href="#booking">Book Care</a></nav>
 </div></header>
@@ -93,15 +144,24 @@ footer{background:#041d3d;color:#c6d7e4;padding:55px 0 20px}.foot{display:grid;g
 
 <section id="booking"><div class="container booking-grid">
 <div class="booking-copy"><div class="eyebrow">Request Home Care</div><h2>Tell us how we can help.</h2><p>This is your first professional booking interface. Right now it works as a demonstration form; later we can connect it directly to WhatsApp or an online booking database.</p><div class="note-list"><div>Choose the type of support needed</div><div>Share your preferred date and area</div><div>Receive confirmation based on availability</div></div></div>
-<form id="book"><div class="form-grid">
+<form id="book"
+action="https//formspree.io/f/https://formspree.io/f/xqpkawwk"
+method="POST">
+<div class="form-grid">
 <div><label>Patient / Contact Name</label><input required placeholder="Full name"></div>
 <div><label>Phone Number</label><input required type="tel" placeholder="Phone number"></div>
 <div><label>Required Service</label><select required><option value="">Select a service</option><option>Basic Dressing Support</option><option>Vitals Monitoring</option><option>Medication Assistance</option><option>Feeding Support</option><option>Catheter / Stoma Support</option><option>Personal Care Support</option><option>Other</option></select></div>
 <div><label>Preferred Date</label><input type="date"></div>
 <div class="full"><label>Address / Area</label><input placeholder="Area and city"></div>
 <div class="full"><label>Additional Information</label><textarea placeholder="Briefly describe the support needed..."></textarea></div>
-</div><p class="form-note">Submitting a request does not guarantee a booking. Final availability and service terms must be confirmed by JotnoSetu.</p><button class="btn primary" type="submit">Submit Request</button></form>
-</div></section>
+<div class="full terms-box"><label class="terms-label"><input type="checkbox" name="terms" value="Accepted" required><span>I agree to the<a hrep="#terms"targe="-blank">Terms & Conditions</a>and understand that submitting this request does not guarentee a booking.Final availability and service terms will be confirmed by Jotnosetu.</span></label></div>
+<input type="hidden" name="_subject" value=New Home Healthcare Booking Request-Jotnosetu">
+<div class="full"><button class="btn primary" type="submit" id="submitBtn">Submit Request</button></div></div></form>
+<div id="bookingSuccess"class="booking-success" style="display:none;">
+<div class="success-icon">✓</div><h3>Request Submitted Successfully</h3><p>Thank you for contacting JotnoSetu.Your home healthcare request has been received.</p><p>Our team will review your request and contact you shortly to confirm availability and service details.</p>
+<button type="button" class="btn primary" onclick="resetBookingForm()">Submit Another Request</button></div>
+
+
 
 <section class="agreement" id="agreement"><div class="container"><div class="head"><div class="eyebrow">Service Agreement</div><h2>Clear expectations for better care</h2><p>A starter version that you can later replace with your final official agreement.</p></div>
 <div class="agreement-box"><ol><li>Services are provided only after the requested scope and availability are confirmed.</li><li>Families should provide accurate information relevant to the agreed care requirements.</li><li>Caregivers should provide only services within their agreed role, training and service scope.</li><li>Medical emergencies require immediate contact with emergency services or the treating doctor; JotnoSetu is not an emergency replacement service.</li><li>Payment, service duration, cancellation and replacement terms should be confirmed before service begins.</li><li>Both families and caregivers must maintain a respectful and safe environment.</li><li>Patient privacy and dignity should be respected by everyone involved.</li></ol>
@@ -110,12 +170,86 @@ footer{background:#041d3d;color:#c6d7e4;padding:55px 0 20px}.foot{display:grid;g
 <section class="testimonial"><div class="container"><div class="head"><div class="eyebrow">Our Promise</div><h2>Trust is earned through care.</h2></div><div class="quote"><div class="mark">“</div><p>We aim to create a home-care experience where families feel heard, patients feel respected, and every interaction reflects genuine care.</p><small>— JotnoSetu Home Healthcare</small></div></div></section>
 
 <section id="contact"><div class="container"><div class="head"><div class="eyebrow">Contact</div><h2>Let's talk about your care needs</h2><p>These details can be replaced with your official contact information before launch.</p></div>
-<div class="contact-grid"><div class="contact"><div class="icon">📞</div><h3>Call Us</h3><p>Official phone number coming soon</p></div><div class="contact"><div class="icon">💬</div><h3>WhatsApp</h3><p>Official WhatsApp coming soon</p></div><div class="contact"><div class="icon">📍</div><h3>Service Area</h3><p>Your launch area coming soon</p></div></div></div></section>
+<div class="contact-grid"><div class="contact"><div class="icon">📞</div><h3>Call Us</h3><p>Official phone number coming soon</p></div><div class="contact"><div class="icon">💬</div><a href="httpsp://wa.me/919093655767"target="_blank"rel="noopener"></a><div/><h3>WhatsApp<h3><p>Chat with us on WhatsApp</p></div>
+<div class="icon">📍</div><h3>Service Area</h3><p>Ranaghat to Barrackpore</p>
+</div></div>
+</div></section>
 </main>
 
 <footer><div class="container foot"><div><img src="logo.png"><h3>JotnoSetu Home Healthcare</h3><p>Caring Hearts. Healing Homes.</p></div><div><h3>Explore</h3><a href="#home">Home</a><a href="#services">Services</a><a href="#about">About Us</a><a href="#booking">Book Care</a></div><div><h3>Important</h3><a href="#agreement">Service Agreement</a><a href="#contact">Contact</a><a href="#how">How It Works</a></div></div><div class="container copy">© <span id="year"></span> JotnoSetu Home Healthcare. All rights reserved.</div></footer>
+
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-document.getElementById('book').addEventListener('submit',e=>{e.preventDefault();alert('Thank you! Your premium demo booking form is ready. Next we can connect this directly to WhatsApp.');});
+const bookingForm = document.getElementById("book");
+const submitBtn = document.getElementById("submitBtn");
+const successBox = document.getElementById("bookingSuccess");
+
+bookingForm.addEventListener("submit", async function(event) {
+
+  event.preventDefault();
+
+  // Prevent double submission
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Submitting...";
+
+  const formData = new FormData(bookingForm);
+
+  try {
+
+    const response = await fetch(bookingForm.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        "Accept": "application/json"
+      }
+    });
+
+    if (response.ok) {
+
+      // Hide form
+      bookingForm.style.display = "none";
+
+      // Show success message
+      successBox.style.display = "block";
+
+      // Scroll to success message
+      successBox.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      bookingForm.reset();
+
+    } else {
+
+      throw new Error("Submission failed");
+
+    }
+
+  } catch (error) {
+
+    alert(
+      "Sorry, your request could not be submitted right now. " +
+      "Please try again after a moment."
+    );
+
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Submit Request";
+  }
+
+});
+
+function resetBookingForm() {
+
+  successBox.style.display = "none";
+  bookingForm.style.display = "block";
+
+  submitBtn.disabled = false;
+  submitBtn.innerText = "Submit Request";
+
+  bookingForm.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
 </script>
 </body></html>

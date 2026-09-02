@@ -123,70 +123,31 @@ footer{background:#041d3d;color:#c6d7e4;padding:55px 0 20px}.foot{display:grid;g
   position: relative;
   margin: 0 auto 45px;
   border-radius: 18px;
+  touch-action: pan-y;
 }
 
 .banner-track {
   display: flex;
   transition: transform 0.6s ease-in-out;
+  will-change: transform;
 }
 
 .banner-slide {
   min-width: 100%;
+  flex-shrink: 0;
 }
 
 .banner-slide img {
   width: 100%;
-  display: block;
   aspect-ratio: 16 / 7;
+  height: auto;
+  display: block;
   object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
-
-.banner-prev,
-.banner-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
-  border: none;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.55);
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: 5;
-}
-
-.banner-prev {
-  left: 15px;
-}
-
-.banner-next {
-  right: 15px;
-}
-
-.banner-dots {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 7px;
-}
-
-.banner-dots span {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: white;
-  opacity: 0.6;
-  cursor: pointer;
-}
-
-.banner-dots span.active {
-  opacity: 1;
-}
-</style>
+ </style>
 </head>
 <body>
 <div class="top"><div class="container"><span>JotnoSetu Home Healthcare • Caring Hearts. Healing Homes.</span><span>📞 Official contact details coming soon</span></div></div>
@@ -199,38 +160,28 @@ footer{background:#041d3d;color:#c6d7e4;padding:55px 0 20px}.foot{display:grid;g
 <main>
 <section class="hero" id="home">
  <div class="container">
+<div class="movie-banner">
+  <div class="banner-track">
 
-    <div class="movie-banner">
-
-      <div class="banner-track">
-
-        <div class="banner-slide">
-          <img src="./Banner%201.png" alt="JotnoSetu Home Healthcare">
-        </div>
-
-        <div class="banner-slide">
-          <img src="./Banner%202.png" alt="JotnoSetu Home Healthcare">
-        </div>
-
-        <div class="banner-slide">
-          <img src="./Banner%203.png" alt="JotnoSetu Home Healthcare">
-        </div>
-
-      </div>
-
-      <button class="banner-prev" onclick="previousBanner()">‹</button>
-
-      <button class="banner-next" onclick="nextBanner()">›</button>
-
-      <div class="banner-dots">
-        <span onclick="showBanner(0)"></span>
-        <span onclick="showBanner(1)"></span>
-        <span onclick="showBanner(2)"></span>
-      </div>
-
+    <div class="banner-slide">
+      <img src="./Banner%201.png" alt="Banner 1">
     </div>
 
-   </div>
+    <div class="banner-slide">
+      <img src="./Banner%202.png" alt="Banner 2">
+    </div>
+
+    <div class="banner-slide">
+      <img src="./Banner%203.png" alt="Banner 3">
+    </div>
+
+    <div class="banner-slide">
+      <img src="./Banner%201.png" alt="Banner 1">
+    </div>
+
+  </div>
+</div>
+   
  <div class="container hero-grid">
 <div><div class="eyebrow">Home Healthcare • Compassion • Support</div>
 <h1>Because the best care should feel <span>close to home.</span></h1>
@@ -417,53 +368,164 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
  <script>
+<script>
 let currentBanner = 0;
+let isMoving = false;
 
+const banner = document.querySelector(".movie-banner");
 const track = document.querySelector(".banner-track");
-const dots = document.querySelectorAll(".banner-dots span");
 
-function showBanner(index) {
+const totalBanners = 3;
 
-  currentBanner = index;
 
-  track.style.transform =
-    "translateX(-" + (index * 100) + "%)";
-
-  dots.forEach(function(dot) {
-    dot.classList.remove("active");
-  });
-
-  dots[index].classList.add("active");
-}
-
+// =========================
+// NEXT BANNER
+// =========================
 
 function nextBanner() {
 
+  if (isMoving) return;
+
+  isMoving = true;
+
   currentBanner++;
 
-  if (currentBanner >= 3) {
-    currentBanner = 0;
-  }
-
-  showBanner(currentBanner);
+  track.style.transform =
+    "translateX(-" + (currentBanner * 100) + "%)";
 }
 
+
+// =========================
+// PREVIOUS BANNER
+// =========================
 
 function previousBanner() {
 
-  currentBanner--;
+  if (isMoving) return;
 
-  if (currentBanner < 0) {
-    currentBanner = 2;
+  isMoving = true;
+
+  // Jodi Banner 1-e thaki,
+  // age clone-er position-e niye jabo
+  if (currentBanner === 0) {
+
+    track.style.transition = "none";
+
+    currentBanner = totalBanners;
+
+    track.style.transform =
+      "translateX(-" + (currentBanner * 100) + "%)";
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+
+        track.style.transition =
+          "transform 0.6s ease-in-out";
+
+        currentBanner--;
+
+        track.style.transform =
+          "translateX(-" + (currentBanner * 100) + "%)";
+      });
+    });
+
+  } else {
+
+    currentBanner--;
+
+    track.style.transform =
+      "translateX(-" + (currentBanner * 100) + "%)";
+  }
+}
+
+
+// =========================
+// TRANSITION END
+// =========================
+
+track.addEventListener("transitionend", function () {
+
+  // Banner 3 → Clone Banner 1
+  if (currentBanner === totalBanners) {
+
+    track.style.transition = "none";
+
+    currentBanner = 0;
+
+    track.style.transform = "translateX(0)";
+
+    requestAnimationFrame(function () {
+
+      track.style.transition =
+        "transform 0.6s ease-in-out";
+
+      isMoving = false;
+
+    });
+
+  } else {
+
+    isMoving = false;
+
+  }
+});
+
+
+// =========================
+// AUTOMATIC SLIDER
+// =========================
+
+setInterval(function () {
+
+  nextBanner();
+
+}, 4000);
+
+
+// =========================
+// FINGER SWIPE
+// =========================
+
+let startX = 0;
+let startY = 0;
+
+banner.addEventListener("touchstart", function (e) {
+
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+
+}, { passive: true });
+
+
+banner.addEventListener("touchend", function (e) {
+
+  const endX = e.changedTouches[0].clientX;
+  const endY = e.changedTouches[0].clientY;
+
+  const differenceX = startX - endX;
+  const differenceY = startY - endY;
+
+
+  // Sudhu horizontal swipe hole kaj korbe
+  if (Math.abs(differenceX) > Math.abs(differenceY)) {
+
+    // LEFT SWIPE → NEXT
+    if (differenceX > 50) {
+
+      nextBanner();
+
+    }
+
+    // RIGHT SWIPE → PREVIOUS
+    else if (differenceX < -50) {
+
+      previousBanner();
+
+    }
+
   }
 
-  showBanner(currentBanner);
-}
-setInterval(function() {
-  nextBanner();
-}, 4000);
-showBanner(0);
+}, { passive: true });
 
 </script>
-
 </html>

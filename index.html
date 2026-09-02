@@ -122,7 +122,7 @@ footer{background:#041d3d;color:#c6d7e4;padding:55px 0 20px}.foot{display:grid;g
   maxi-width:1200px
   overflow: hidden;
   position: relative;
-  margin: 0 auto 45px;
+  margin: 30px auto 45px;
   border-radius: 18px;
   touch-action: pan-y;
 }
@@ -139,13 +139,15 @@ footer{background:#041d3d;color:#c6d7e4;padding:55px 0 20px}.foot{display:grid;g
   flex: 0 0 100%;
 }
 
-.banner-slide img {
+.banner-slide img 
   width: 100%;
   height: auto;
-  display: block;
+  aspect-ratio contain;:16/7; 
+ display: block;
   user-select: none;
   -webkit-user-drag: none;
   pointer-events: none;
+ object-fit
 }
  </style>
 </head>

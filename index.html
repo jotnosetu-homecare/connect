@@ -96,7 +96,6 @@ footer{background:#041d3d;color:#c6d7e4;padding:55px 0 20px}.foot{display:grid;g
   margin: 8px auto;
   line-height: 1.6;
 }
-/* Fix booking section overlap while scrolling */
 .booking-copy {
   position: static !important;
   top: auto !important;
@@ -118,6 +117,75 @@ footer{background:#041d3d;color:#c6d7e4;padding:55px 0 20px}.foot{display:grid;g
   font-size: 11px;
   line-height: 1.4;
 }
+ .movie-banner {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto 45px;
+  border-radius: 18px;
+}
+
+.banner-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.banner-slide {
+  min-width: 100%;
+}
+
+.banner-slide img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+}
+
+.banner-prev,
+.banner-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.banner-prev {
+  left: 15px;
+}
+
+.banner-next {
+  right: 15px;
+}
+
+.banner-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+}
+
+.banner-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.banner-dots span.active {
+  opacity: 1;
+}
 </style>
 </head>
 <body>
@@ -129,7 +197,41 @@ footer{background:#041d3d;color:#c6d7e4;padding:55px 0 20px}.foot{display:grid;g
 </div></header>
 
 <main>
-<section class="hero" id="home"><div class="container hero-grid">
+<section class="hero" id="home">
+ <div class="container">
+
+    <div class="movie-banner">
+
+      <div class="banner-track">
+
+        <div class="banner-slide">
+          <img src="banner1.jpg" alt="JotnoSetu Home Healthcare">
+        </div>
+
+        <div class="banner-slide">
+          <img src="banner2.jpg" alt="JotnoSetu Home Healthcare">
+        </div>
+
+        <div class="banner-slide">
+          <img src="banner3.jpg" alt="JotnoSetu Home Healthcare">
+        </div>
+
+      </div>
+
+      <button class="banner-prev" onclick="previousBanner()">‹</button>
+
+      <button class="banner-next" onclick="nextBanner()">›</button>
+
+      <div class="banner-dots">
+        <span onclick="showBanner(0)"></span>
+        <span onclick="showBanner(1)"></span>
+        <span onclick="showBanner(2)"></span>
+      </div>
+
+    </div>
+
+   </div>
+ <div class="container hero-grid">
 <div><div class="eyebrow">Home Healthcare • Compassion • Support</div>
 <h1>Because the best care should feel <span>close to home.</span></h1>
 <p class="lead">JotnoSetu brings compassionate, organised and patient-centred support closer to families—helping make everyday care at home feel simpler, warmer and more reassuring.</p>
@@ -236,8 +338,6 @@ const successBox = document.getElementById("bookingSuccess");
 bookingForm.addEventListener("submit", async function(event) {
 
   event.preventDefault();
-
-  // Prevent double submission
   submitBtn.disabled = true;
   submitBtn.innerText = "Submitting...";
 
@@ -254,15 +354,9 @@ bookingForm.addEventListener("submit", async function(event) {
     });
 
     if (response.ok) {
-
-      // Hide form
-      bookingForm.style.display = "none";
-
-      // Show success message
-      successBox.style.display = "block";
-
-      // Scroll to success message
-      successBox.scrollIntoView({
+bookingForm.style.display = "none";
+successBox.style.display = "block";
+successBox.scrollIntoView({
         behavior: "smooth",
         block: "center"
       });
@@ -321,4 +415,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+
+ <script>
+let currentBanner = 0;
+
+const track = document.querySelector(".banner-track");
+const dots = document.querySelectorAll(".banner-dots span");
+
+function showBanner(index) {
+
+  currentBanner = index;
+
+  track.style.transform =
+    "translateX(-" + (index * 100) + "%)";
+
+  dots.forEach(function(dot) {
+    dot.classList.remove("active");
+  });
+
+  dots[index].classList.add("active");
+}
+
+
+function nextBanner() {
+
+  currentBanner++;
+
+  if (currentBanner >= 3) {
+    currentBanner = 0;
+  }
+
+  showBanner(currentBanner);
+}
+
+
+function previousBanner() {
+
+  currentBanner--;
+
+  if (currentBanner < 0) {
+    currentBanner = 2;
+  }
+
+  showBanner(currentBanner);
+}
+setInterval(function() {
+  nextBanner();
+}, 4000);
+showBanner(0);
+
+</script>
+
 </html>

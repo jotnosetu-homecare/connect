@@ -471,33 +471,27 @@ function previousBanner() {
 
 track.addEventListener("transitionend", function () {
 
-    /* Banner 3 → Clone Banner 1 */
+  if (currentBanner === totalBanners) {
 
-    if (currentBanner === totalBanners) {
+    // Clone Banner 1 reached
+    // Reset silently to the real Banner 1
 
-        track.style.transition = "none";
+    track.style.transition = "none";
+    currentBanner = 0;
+    track.style.transform = "translateX(0)";
 
-        currentBanner = 0;
+    requestAnimationFrame(function () {
+      track.style.transition = "transform 0.6s ease-in-out";
+      isMoving = false;
+    });
 
-        track.style.transform = "translateX(0)";
+  } else {
 
-        requestAnimationFrame(function () {
+    isMoving = false;
 
-            track.style.transition =
-                "transform 0.6s ease-in-out";
-
-            isMoving = false;
-
-        });
-
-    } else {
-
-        isMoving = false;
-
-    }
+  }
 
 });
-
 
 /* =========================
    AUTOMATIC SLIDER

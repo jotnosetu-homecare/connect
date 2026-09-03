@@ -400,10 +400,11 @@ const banner = document.querySelector(".movie-banner");
 const track = document.querySelector(".banner-track");
 
 const totalBanners = 3;
+const slideWidth = 25;
 
 
 /* =========================
-   NEXT BANNER
+   MOVE TO NEXT
 ========================= */
 
 function nextBanner() {
@@ -414,13 +415,15 @@ function nextBanner() {
 
     currentBanner++;
 
+    track.style.transition = "transform 0.6s ease-in-out";
+
     track.style.transform =
-        "translateX(-" + (currentBanner * 25) + "%)";
+        "translateX(-" + (currentBanner * slideWidth) + "%)";
 }
 
 
 /* =========================
-   PREVIOUS BANNER
+   MOVE TO PREVIOUS
 ========================= */
 
 function previousBanner() {
@@ -431,27 +434,24 @@ function previousBanner() {
 
     if (currentBanner === 0) {
 
-        /* Jump to clone of Banner 1 */
-
         track.style.transition = "none";
 
         currentBanner = totalBanners;
 
         track.style.transform =
-            "translateX(-" + (currentBanner * 25) + "%)";
+            "translateX(-" + (currentBanner * slideWidth) + "%)";
+
+        track.offsetHeight;
 
         requestAnimationFrame(function () {
 
-            requestAnimationFrame(function () {
+            track.style.transition =
+                "transform 0.6s ease-in-out";
 
-                track.style.transition =
-                    "transform 0.6s ease-in-out";
+            currentBanner--;
 
-                currentBanner--;
-
-                track.style.transform =
-                    "translateX(-" + (currentBanner * 25) + "%)";
-            });
+            track.style.transform =
+                "translateX(-" + (currentBanner * slideWidth) + "%)";
 
         });
 
@@ -459,52 +459,60 @@ function previousBanner() {
 
         currentBanner--;
 
+        track.style.transition =
+            "transform 0.6s ease-in-out";
+
         track.style.transform =
-            "translateX(-" + (currentBanner * 100) + "%)";
+            "translateX(-" + (currentBanner * slideWidth) + "%)";
     }
 }
 
 
 /* =========================
-   TRANSITION END
+   LOOP AFTER BANNER 3
 ========================= */
 
 track.addEventListener("transitionend", function () {
 
-  if (currentBanner === totalBanners) {
+    if (currentBanner === totalBanners) {
 
-    /*
-      Clone Banner 1 reached.
-      Hide the instant position reset so
-      the user never sees reverse movement.
-    */
+        /*
+        Banner 3 → Clone Banner 1
+        animation finishes here.
+        Now silently return to real Banner 1.
+        */
 
-    track.style.transition = "none";
+        track.style.transition = "none";
 
-    track.style.visibility = "hidden";
+        currentBanner = 0;
 
-    currentBanner = 0;
+        track.style.transform = "translateX(0)";
 
-    track.style.transform = "translateX(0)";
+        /*
+        Force browser to apply the reset
+        before enabling animation again.
+        */
 
-    requestAnimationFrame(function () {
+        track.offsetHeight;
 
-      track.style.visibility = "visible";
+        requestAnimationFrame(function () {
 
-      track.style.transition =
-        "transform 0.6s ease-in-out";
+            track.style.transition =
+                "transform 0.6s ease-in-out";
 
-      isMoving = false;
+            isMoving = false;
 
-    });
+        });
 
-  } else {
+    } else {
 
-    isMoving = false;
+        isMoving = false;
 
-  }
+    }
 
 });
+
+
 /* =========================
    AUTOMATIC SLIDER
 ========================= */
@@ -539,12 +547,9 @@ banner.addEventListener("touchend", function (e) {
     const differenceX = startX - endX;
     const differenceY = startY - endY;
 
-
-    /* Only horizontal swipe */
-
     if (Math.abs(differenceX) > Math.abs(differenceY)) {
 
-        /* LEFT → NEXT */
+        /* LEFT SWIPE → NEXT */
 
         if (differenceX > 50) {
 
@@ -552,7 +557,7 @@ banner.addEventListener("touchend", function (e) {
 
         }
 
-        /* RIGHT → PREVIOUS */
+        /* RIGHT SWIPE → PREVIOUS */
 
         else if (differenceX < -50) {
 
@@ -563,6 +568,5 @@ banner.addEventListener("touchend", function (e) {
     }
 
 }, { passive: true });
-
 </script>
 </html>

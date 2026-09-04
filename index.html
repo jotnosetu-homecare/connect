@@ -1,888 +1,2507 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta name="google-site-verification" content="nWtq7PNTJQFR9g8eJlKsvwNeTi42H6aL-maZ5RjsTds" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JotnoSetu Home Healthcare | Caring Hearts. Healing Homes.</title>
-<meta name="description" content="Compassionate, home-first healthcare support by JotnoSetu.">
-<style>
-:root{
- --navy:#062b5c; --blue:#1262aa; --teal:#13a7a3; --cyan:#68d8d2;
- --ink:#15324a; --muted:#617386; --bg:#f5fbfc; --white:#fff;
- --line:#d9e7eb; --shadow:0 18px 60px rgba(7,45,88,.12)
-}
-*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
-body{font-family:Inter,Arial,sans-serif;color:var(--ink);line-height:1.6;background:white}
-.container{width:min(1160px,92%);margin:auto} a{text-decoration:none;color:inherit}
-.top{background:#05264f;color:#d7eff3;font-size:.84rem}.top .container{padding:8px 0;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);z-index:50;border-bottom:1px solid var(--line)}
-.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--navy);letter-spacing:.3px}.brand img{width:54px;height:54px;object-fit:contain;border-radius:50%}.brand small{display:block;font-size:.62rem;letter-spacing:2px;color:var(--teal)}
-.links{display:flex;align-items:center;gap:22px;font-size:.9rem;font-weight:750}.links a:hover{color:var(--teal)}
-.menu{display:none;border:0;background:transparent;font-size:1.55rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:10px;font-weight:850;transition:.2s;border:1px solid transparent;cursor:pointer}
-.primary{background:linear-gradient(135deg,var(--navy),var(--teal));color:white;box-shadow:0 10px 25px rgba(10,87,124,.18)}.primary:hover{transform:translateY(-2px)}
-.secondary{border-color:#b9d1db;background:white;color:var(--navy)}
-.hero{min-height:650px;background:radial-gradient(circle at 85% 20%,#c8f4ef 0,transparent 22%),radial-gradient(circle at 18% 90%,#d8ebff 0,transparent 30%),linear-gradient(135deg,#f7fcff,#eefafa);overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:60px;padding:78px 0}
-.eyebrow{font-size:.78rem;font-weight:900;color:var(--teal);letter-spacing:1.6px;text-transform:uppercase}
-h1{font-size:clamp(2.8rem,5.2vw,5rem);line-height:1.03;color:var(--navy);margin:14px 0 18px;letter-spacing:-2px}h1 span{color:var(--teal)}
-.lead{font-size:1.08rem;color:var(--muted);max-width:620px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.trust-row{display:flex;gap:24px;flex-wrap:wrap;margin-top:35px}.trust-row div{border-left:2px solid var(--cyan);padding-left:12px;font-size:.86rem;color:var(--muted)}.trust-row strong{display:block;color:var(--navy);font-size:1rem}
-.hero-art{position:relative;min-height:480px;display:grid;place-items:center}.circle{position:absolute;width:430px;height:430px;border-radius:50%;background:linear-gradient(145deg,#0c4f91,#16aaa5);opacity:.14}.logo-orb{position:relative;width:330px;height:330px;border-radius:45%;background:white;display:grid;place-items:center;box-shadow:var(--shadow);transform:rotate(5deg);overflow:hidden}.logo-orb:before{content:"";position:absolute;inset:15px;border:1px solid #cce7eb;border-radius:40%}.logo-orb img{width:88%;position:relative;z-index:1}.floating{position:absolute;background:white;border-radius:14px;padding:13px 16px;box-shadow:var(--shadow);font-size:.85rem;font-weight:800;color:var(--navy)}.f1{top:40px;right:0}.f2{bottom:55px;left:-10px}.f3{right:15px;bottom:10px;color:var(--teal)}
-section{padding:86px 0}.head{text-align:center;max-width:730px;margin:0 auto 48px}.head h2{font-size:clamp(2rem,3.2vw,3.15rem);color:var(--navy);line-height:1.12;margin:9px 0 12px}.head p{color:var(--muted)}
-.stats{background:var(--navy);color:white}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}.stat{padding:28px;border-right:1px solid rgba(255,255,255,.12)}.stat:last-child{border:0}.stat strong{display:block;font-size:1.35rem;color:#75e4dd}.stat span{font-size:.85rem;color:#d4e0e8}
-.services{background:var(--bg)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:white;border:1px solid var(--line);border-radius:20px;padding:27px;transition:.25s}.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}.icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;font-size:1.45rem;background:linear-gradient(135deg,#e2f4ff,#d9f7f3);margin-bottom:18px}.card h3{color:var(--navy);margin-bottom:8px}.card p{font-size:.92rem;color:var(--muted)}.service-link{display:inline-block;margin-top:15px;color:var(--teal);font-weight:800;font-size:.88rem}
-.why-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:65px;align-items:center}.care-art{min-height:430px;border-radius:28px;background:linear-gradient(145deg,#062b5c,#0f7c98);position:relative;overflow:hidden;padding:35px;color:white}.care-art:before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:#24c3b9;opacity:.15;right:-100px;top:-80px}.care-art h3{font-size:2rem;line-height:1.15;position:relative}.care-art p{position:relative;margin-top:15px;color:#d3edf0;max-width:370px}.mini-card{position:absolute;bottom:32px;left:32px;right:32px;background:white;color:var(--ink);padding:18px;border-radius:16px;box-shadow:var(--shadow);font-size:.9rem}.mini-card strong{display:block;color:var(--navy);margin-bottom:4px}
-.points{display:grid;gap:18px}.point{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}.tick{min-width:38px;height:38px;border-radius:50%;background:#e2f7f5;color:var(--teal);display:grid;place-items:center;font-weight:900}.point h3{color:var(--navy);font-size:1rem}.point p{color:var(--muted);font-size:.9rem;margin-top:3px}
-.how{background:linear-gradient(135deg,#eefbfc,#f8fbff)}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{background:white;padding:25px;border-radius:18px;border:1px solid var(--line);position:relative}.num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:white;font-weight:900;margin-bottom:18px}.step h3{color:var(--navy);font-size:1rem;margin-bottom:6px}.step p{font-size:.88rem;color:var(--muted)}
-.booking-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:start}.booking-copy{position:sticky;top:110px}.booking-copy h2{font-size:clamp(2rem,3vw,3rem);color:var(--navy);line-height:1.1;margin:10px 0 15px}.booking-copy p{color:var(--muted)}.note-list{display:grid;gap:10px;margin-top:24px;font-size:.9rem}.note-list div:before{content:"✓";color:var(--teal);font-weight:900;margin-right:9px}
-form{background:white;border:1px solid var(--line);padding:30px;border-radius:22px;box-shadow:var(--shadow)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}label{display:block;font-size:.82rem;font-weight:850;margin-bottom:5px}input,select,textarea{width:100%;padding:13px;border:1px solid #ccdde2;border-radius:9px;font:inherit;outline:0}input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(19,167,163,.12)}textarea{min-height:110px;resize:vertical}.full{grid-column:1/-1}.form-note{font-size:.78rem;color:var(--muted);margin:14px 0}
-.agreement{background:#fff}.agreement-box{max-width:950px;margin:auto;border:1px solid var(--line);border-radius:22px;padding:34px}.agreement-box ol{padding-left:22px;display:grid;gap:12px;color:var(--muted);font-size:.94rem}.warning{margin-top:20px;padding:15px 18px;border-radius:10px;background:#eefafa;border-left:4px solid var(--teal);font-size:.88rem}
-.testimonial{background:var(--bg)}.quote{max-width:820px;margin:auto;background:white;border:1px solid var(--line);border-radius:24px;padding:40px;text-align:center;box-shadow:var(--shadow)}.quote .mark{font-size:3rem;color:var(--teal);line-height:.8}.quote p{font-size:1.15rem;color:#40576b;margin:15px 0}.quote small{color:var(--muted)}
-.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.contact{border:1px solid var(--line);border-radius:18px;padding:27px;text-align:center}.contact .icon{margin:auto auto 14px}.contact h3{color:var(--navy)}.contact p{color:var(--muted);font-size:.9rem;margin-top:5px}
-footer{background:#041d3d;color:#c6d7e4;padding:55px 0 20px}.foot{display:grid;grid-template-columns:1.3fr .8fr .8fr;gap:35px}.foot h3{color:white;margin-bottom:12px}.foot a{display:block;margin:8px 0;font-size:.9rem}.foot img{width:85px;border-radius:50%;margin-bottom:10px}.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:18px;text-align:center;font-size:.82rem}
-@media(max-width:900px){.links{display:none;position:absolute;top:78px;left:0;right:0;background:white;padding:22px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.links.show{display:flex}.menu{display:block}.hero-grid,.why-grid,.booking-grid{grid-template-columns:1fr}.booking-copy{position:static}.hero-art{min-height:390px}.cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.stat-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.foot{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){section{padding:64px 0}.cards,.steps,.contact-grid,.form-grid,.foot{grid-template-columns:1fr}.hero-grid{padding:58px 0}.logo-orb{width:270px;height:270px}.hero-art{min-height:340px}.floating{font-size:.74rem}.stat-grid{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}}.terms-box {margin-top: 10px;}
-.terms-label {display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
-  line-height: 1.6;
-  cursor: pointer;
-}
+  <meta name="google-site-verification" content="nWtq7PNTJQFR9g8eJlKsvwNeTi42H6aL-maZ5RjsTds">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.terms-label input[type="checkbox"] {
-  margin-top: 5px;
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-}
+  <title>JotnoSetu Home Healthcare | Caring Hearts. Healing Homes.</title>
+  <meta name="description" content="Compassionate, home-first healthcare support by JotnoSetu.">
 
-.terms-label a {
-  text-decoration: underline;
-  font-weight: 600;
-}
+  <style>
+    /* =========================================================
+       ROOT & RESET
+       ========================================================= */
 
-.booking-success {
-  text-align: center;
-  padding: 40px 25px;
-  margin-top: 20px;
-  border-radius: 18px;
-  background: #f5fbfa;
-  border: 1px solid #d8eeeb;
-}
+    :root {
+      --navy: #062b5c;
+      --blue: #1262aa;
+      --teal: #13a7a3;
+      --cyan: #68d8d2;
+      --ink: #15324a;
+      --muted: #617386;
+      --bg: #f5fbfc;
+      --white: #fff;
+      --line: #d9e7eb;
+      --shadow: 0 18px 60px rgba(7, 45, 88, .12);
+    }
 
-.success-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 18px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 34px;
-  font-weight: bold;
-  background: #e2f5ef;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.booking-success h3 {
-  margin-bottom: 10px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.booking-success p {
-  max-width: 600px;
-  margin: 8px auto;
-  line-height: 1.6;
-}
-.booking-copy {
-  position: static !important;
-  top: auto !important;
-  z-index: auto !important;
-}
+    body {
+      font-family: Inter, Arial, sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+      background: white;
+    }
 
-.booking-grid {
-  position: relative;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-#booking {
-  position: relative;
-  z-index: 1;
-}
-.service-area-note {
-  display: block;
-  margin-top: 5px;
-  color: red;
-  font-size: 11px;
-  line-height: 1.4;
-}
-/* ===== PROFESSIONAL BANNER SLIDER ===== */
-
-.movie-banner {
-    width: 100%;
-    max-width: 1200px;
-    margin: 10px auto 5px;
-    overflow: hidden;
-    position: relative;
-    border-radius: 16px;
-    touch-action: pan-y;
-}
-
-.banner-track {
-    display: flex;
-    width: 400%;
-    transition: transform 0.6s ease-in-out;
-    will-change: transform;
-}
-
-.banner-slide {
-    flex: 0 0 25%;
-    width: 25%;
-    min-width: 25%;
-}
-
-.banner-slide img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 7;
-    object-fit: contain;
-    user-select: none;
-    -webkit-user-drag: none;
-    pointer-events: none;
-}
+    .container {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
 
 
-/* MOBILE */
+    /* =========================================================
+       TOP BAR
+       ========================================================= */
 
-@media (max-width: 768px) {
+    .top {
+      background: #05264f;
+      color: #d7eff3;
+      font-size: .84rem;
+    }
+
+    .top .container {
+      padding: 8px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+
+    /* =========================================================
+       HEADER / NAVBAR
+       ========================================================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, .95);
+      backdrop-filter: blur(16px);
+      z-index: 50;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: .3px;
+    }
+
+    .brand img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .brand small {
+      display: block;
+      font-size: .62rem;
+      letter-spacing: 2px;
+      color: var(--teal);
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: .9rem;
+      font-weight: 750;
+    }
+
+    .links a:hover {
+      color: var(--teal);
+    }
+
+    .menu {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.55rem;
+      cursor: pointer;
+    }
+
+
+    /* =========================================================
+       BUTTONS
+       ========================================================= */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border-radius: 10px;
+      font-weight: 850;
+      transition: .2s;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .primary {
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      color: white;
+      box-shadow: 0 10px 25px rgba(10, 87, 124, .18);
+    }
+
+    .primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .secondary {
+      border-color: #b9d1db;
+      background: white;
+      color: var(--navy);
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      min-height: 650px;
+      background:
+        radial-gradient(circle at 85% 20%, #c8f4ef 0, transparent 22%),
+        radial-gradient(circle at 18% 90%, #d8ebff 0, transparent 30%),
+        linear-gradient(135deg, #f7fcff, #eefafa);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 60px;
+      padding: 78px 0;
+    }
+
+    .eyebrow {
+      font-size: .78rem;
+      font-weight: 900;
+      color: var(--teal);
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 5.2vw, 5rem);
+      line-height: 1.03;
+      color: var(--navy);
+      margin: 14px 0 18px;
+      letter-spacing: -2px;
+    }
+
+    h1 span {
+      color: var(--teal);
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .trust-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .trust-row div {
+      border-left: 2px solid var(--cyan);
+      padding-left: 12px;
+      font-size: .86rem;
+      color: var(--muted);
+    }
+
+    .trust-row strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+
+    /* =========================================================
+       HERO ART
+       ========================================================= */
+
+    .hero-art {
+      position: relative;
+      min-height: 480px;
+      display: grid;
+      place-items: center;
+    }
+
+    .circle {
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #0c4f91, #16aaa5);
+      opacity: .14;
+    }
+
+    .logo-orb {
+      position: relative;
+      width: 330px;
+      height: 330px;
+      border-radius: 45%;
+      background: white;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow);
+      transform: rotate(5deg);
+      overflow: hidden;
+    }
+
+    .logo-orb::before {
+      content: "";
+      position: absolute;
+      inset: 15px;
+      border: 1px solid #cce7eb;
+      border-radius: 40%;
+    }
+
+    .logo-orb img {
+      width: 88%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .floating {
+      position: absolute;
+      background: white;
+      border-radius: 14px;
+      padding: 13px 16px;
+      box-shadow: var(--shadow);
+      font-size: .85rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .f1 {
+      top: 40px;
+      right: 0;
+    }
+
+    .f2 {
+      bottom: 55px;
+      left: -10px;
+    }
+
+    .f3 {
+      right: 15px;
+      bottom: 10px;
+      color: var(--teal);
+    }
+
+
+    /* =========================================================
+       BANNER SLIDER
+       ========================================================= */
 
     .movie-banner {
-        width: 100%;
-        max-width: none;
-        margin: 10px auto 5px;
-        border-radius: 12px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 10px auto 5px;
+      overflow: hidden;
+      position: relative;
+      border-radius: 16px;
+      touch-action: pan-y;
+    }
+
+    .banner-track {
+      display: flex;
+      width: 400%;
+      transition: transform .6s ease-in-out;
+      will-change: transform;
+    }
+
+    .banner-slide {
+      flex: 0 0 25%;
+      width: 25%;
+      min-width: 25%;
     }
 
     .banner-slide img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 7;
+      object-fit: contain;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+    }
+
+
+    /* =========================================================
+       GENERAL SECTIONS
+       ========================================================= */
+
+    section {
+      padding: 86px 0;
+    }
+
+    .head {
+      text-align: center;
+      max-width: 730px;
+      margin: 0 auto 48px;
+    }
+
+    .head h2 {
+      font-size: clamp(2rem, 3.2vw, 3.15rem);
+      color: var(--navy);
+      line-height: 1.12;
+      margin: 9px 0 12px;
+    }
+
+    .head p {
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       STATS
+       ========================================================= */
+
+    .stats {
+      background: var(--navy);
+      color: white;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+    }
+
+    .stat {
+      padding: 28px;
+      border-right: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      color: #75e4dd;
+    }
+
+    .stat span {
+      font-size: .85rem;
+      color: #d4e0e8;
+    }
+
+
+    /* =========================================================
+       SERVICES
+       ========================================================= */
+
+    .services {
+      background: var(--bg);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 27px;
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      font-size: 1.45rem;
+      background: linear-gradient(135deg, #e2f4ff, #d9f7f3);
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: .92rem;
+      color: var(--muted);
+    }
+
+    .service-link {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--teal);
+      font-weight: 800;
+      font-size: .88rem;
+    }
+
+
+    /* =========================================================
+       WHY JOTNOSETU
+       ========================================================= */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .care-art {
+      min-height: 430px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #062b5c, #0f7c98);
+      position: relative;
+      overflow: hidden;
+      padding: 35px;
+      color: white;
+    }
+
+    .care-art::before {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: #24c3b9;
+      opacity: .15;
+      right: -100px;
+      top: -80px;
+    }
+
+    .care-art h3 {
+      font-size: 2rem;
+      line-height: 1.15;
+      position: relative;
+    }
+
+    .care-art p {
+      position: relative;
+      margin-top: 15px;
+      color: #d3edf0;
+      max-width: 370px;
+    }
+
+    .mini-card {
+      position: absolute;
+      bottom: 32px;
+      left: 32px;
+      right: 32px;
+      background: white;
+      color: var(--ink);
+      padding: 18px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      font-size: .9rem;
+    }
+
+    .mini-card strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .points {
+      display: grid;
+      gap: 18px;
+    }
+
+    .point {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tick {
+      min-width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #e2f7f5;
+      color: var(--teal);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .point h3 {
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .point p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: 3px;
+    }
+
+
+    /* =========================================================
+       HOW IT WORKS
+       ========================================================= */
+
+    .how {
+      background: linear-gradient(135deg, #eefbfc, #f8fbff);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      position: relative;
+    }
+
+    .num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--navy);
+      color: white;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .step h3 {
+      color: var(--navy);
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .step p {
+      font-size: .88rem;
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       BOOKING
+       ========================================================= */
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 55px;
+      align-items: start;
+      position: relative;
+    }
+
+    .booking-copy {
+      position: static;
+    }
+
+    .booking-copy h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      color: var(--navy);
+      line-height: 1.1;
+      margin: 10px 0 15px;
+    }
+
+    .booking-copy p {
+      color: var(--muted);
+    }
+
+    .note-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+      font-size: .9rem;
+    }
+
+    .note-list div::before {
+      content: "✓";
+      color: var(--teal);
+      font-weight: 900;
+      margin-right: 9px;
+    }
+
+    #booking {
+      position: relative;
+      z-index: 1;
+    }
+
+
+    /* =========================================================
+       FORM
+       ========================================================= */
+
+    form {
+      background: white;
+      border: 1px solid var(--line);
+      padding: 30px;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    label {
+      display: block;
+      font-size: .82rem;
+      font-weight: 850;
+      margin-bottom: 5px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccdde2;
+      border-radius: 9px;
+      font: inherit;
+      outline: 0;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(19, 167, 163, .12);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .form-note {
+      font-size: .78rem;
+      color: var(--muted);
+      margin: 14px 0;
+    }
+
+    .service-area-note {
+      display: block;
+      margin-top: 5px;
+      color: red;
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+
+    /* =========================================================
+       TERMS & CONDITIONS
+       ========================================================= */
+
+    .terms-box {
+      margin-top: 10px;
+    }
+
+    .terms-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 1.6;
+      cursor: pointer;
+    }
+
+    .terms-label input[type="checkbox"] {
+      margin-top: 5px;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .terms-label a {
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       BOOKING SUCCESS
+       ========================================================= */
+
+    .booking-success {
+      text-align: center;
+      padding: 40px 25px;
+      margin-top: 20px;
+      border-radius: 18px;
+      background: #f5fbfa;
+      border: 1px solid #d8eeeb;
+    }
+
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      font-weight: bold;
+      background: #e2f5ef;
+    }
+
+    .booking-success h3 {
+      margin-bottom: 10px;
+    }
+
+    .booking-success p {
+      max-width: 600px;
+      margin: 8px auto;
+      line-height: 1.6;
+    }
+
+
+    /* =========================================================
+       AGREEMENT
+       ========================================================= */
+
+    .agreement {
+      background: #fff;
+    }
+
+    .agreement-box {
+      max-width: 950px;
+      margin: auto;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 34px;
+    }
+
+    .agreement-box ol {
+      padding-left: 22px;
+      display: grid;
+      gap: 12px;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .warning {
+      margin-top: 20px;
+      padding: 15px 18px;
+      border-radius: 10px;
+      background: #eefafa;
+      border-left: 4px solid var(--teal);
+      font-size: .88rem;
+    }
+
+
+    /* =========================================================
+       TESTIMONIAL
+       ========================================================= */
+
+    .testimonial {
+      background: var(--bg);
+    }
+
+    .quote {
+      max-width: 820px;
+      margin: auto;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .quote .mark {
+      font-size: 3rem;
+      color: var(--teal);
+      line-height: .8;
+    }
+
+    .quote p {
+      font-size: 1.15rem;
+      color: #40576b;
+      margin: 15px 0;
+    }
+
+    .quote small {
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       CONTACT
+       ========================================================= */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .contact {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 27px;
+      text-align: center;
+    }
+
+    .contact .icon {
+      margin: auto auto 14px;
+    }
+
+    .contact h3 {
+      color: var(--navy);
+    }
+
+    .contact p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: 5px;
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      background: #041d3d;
+      color: #c6d7e4;
+      padding: 55px 0 20px;
+    }
+
+    .foot {
+      display: grid;
+      grid-template-columns: 1.3fr .8fr .8fr;
+      gap: 35px;
+    }
+
+    .foot h3 {
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .foot a {
+      display: block;
+      margin: 8px 0;
+      font-size: .9rem;
+    }
+
+    .foot img {
+      width: 85px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .copy {
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      margin-top: 30px;
+      padding-top: 18px;
+      text-align: center;
+      font-size: .82rem;
+    }
+
+
+    /* =========================================================
+       TABLET + MOBILE
+       ========================================================= */
+
+    @media (max-width: 900px) {
+
+      .links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 22px;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .links.show {
+        display: flex;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .hero-grid,
+      .why-grid,
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-copy {
+        position: static;
+      }
+
+      .hero-art {
+        min-height: 390px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .foot {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+
+    /* =========================================================
+       DESKTOP / LAPTOP
+       ========================================================= */
+
+    @media (min-width: 901px) {
+
+      .hero {
+        min-height: auto;
+      }
+
+      .movie-banner {
+        max-width: 1040px;
+        margin: 22px auto 34px;
+      }
+
+      .banner-slide img {
+        object-fit: cover;
+      }
+
+      .hero-grid {
+        padding: 48px 0 58px;
+        gap: 48px;
+      }
+
+      .hero-grid h1 {
+        font-size: clamp(2.6rem, 3.8vw, 4rem);
+        line-height: 1.06;
+        letter-spacing: -1.6px;
+        margin: 12px 0 17px;
+        max-width: 620px;
+      }
+
+      .hero-grid .lead {
+        font-size: 1rem;
+        line-height: 1.65;
+        max-width: 570px;
+      }
+
+      .hero-grid .actions {
+        margin-top: 24px;
+      }
+
+      .hero-grid .trust-row {
+        margin-top: 28px;
+        gap: 20px;
+      }
+
+      .hero-art {
+        min-height: 390px;
+      }
+
+      .circle {
+        width: 370px;
+        height: 370px;
+      }
+
+      .logo-orb {
+        width: 290px;
+        height: 290px;
+      }
+
+      .floating {
+        padding: 11px 14px;
+        font-size: .78rem;
+      }
+
+      .f1 {
+        top: 35px;
+        right: 0;
+      }
+
+      .f2 {
+        bottom: 45px;
+        left: 0;
+      }
+
+      .f3 {
+        right: 10px;
+        bottom: 5px;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      .head {
+        margin-bottom: 40px;
+      }
+
+      .head h2 {
+        font-size: clamp(2rem, 2.8vw, 2.8rem);
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .why-grid {
+        gap: 52px;
+      }
+
+      .care-art {
+        min-height: 390px;
+      }
+
+      .booking-grid {
+        gap: 48px;
+      }
+    }
+
+
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
+    @media (min-width: 561px) and (max-width: 900px) {
+
+      .movie-banner {
+        width: 94%;
+        margin: 3px auto 5px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        padding: 45px 0 55px;
+        gap: 35px;
+      }
+
+      .hero-grid h1 {
+        font-size: clamp(2.5rem, 6vw, 3.6rem);
+        line-height: 1.05;
+      }
+
+      .hero-art {
+        min-height: 360px;
+      }
+
+      .logo-orb {
+        width: 280px;
+        height: 280px;
+      }
+
+      .circle {
+        width: 350px;
+        height: 350px;
+      }
+    }
+
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 560px) {
+
+      .top .container {
+        padding: 6px 0;
+        font-size: .70rem;
+        line-height: 1.35;
+      }
+
+      .top .container span:last-child {
+        display: none;
+      }
+
+      .nav {
+        height: 70px;
+      }
+
+      .brand {
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .brand small {
+        font-size: .57rem;
+        letter-spacing: 1.6px;
+      }
+
+      .menu {
+        font-size: 1.7rem;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .movie-banner {
+        width: calc(100% - 28px);
+        max-width: none;
+        margin: 5px auto 0;
+        border-radius: 12px;
+      }
+
+      .banner-slide img {
         width: 100%;
         height: auto;
         aspect-ratio: 16 / 7;
         object-fit: contain;
-    }
-}
-/* =========================================================
-   JOTNOSETU — RESPONSIVE SIZE & SPACE OPTIMIZATION
-   Desktop + Laptop + Tablet + Mobile
-   ========================================================= */
-
-
-/* =========================
-   DESKTOP / LAPTOP
-   ========================= */
-
-@media (min-width: 901px) {
-
-  /* ---------- HERO ---------- */
-
-  .hero {
-    min-height: auto;
-    overflow: hidden;
-  }
-
-  /* Banner: controlled width instead of full available width */
-  .movie-banner {
-    width: 100%;
-    max-width: 1040px;
-    margin: 10px auto 5px;
-    border-radius: 16px;
-  }
-
-  .banner-slide img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 7;
-    object-fit: cover;
-  }
-
-  /* Main hero content */
-  .hero-grid {
-    padding: 48px 0 58px;
-    gap: 48px;
-    align-items: center;
-  }
-
-  /* Prevent oversized heading */
-  .hero-grid h1 {
-    font-size: clamp(2.6rem, 3.8vw, 4rem);
-    line-height: 1.06;
-    letter-spacing: -1.6px;
-    margin: 12px 0 17px;
-    max-width: 620px;
-  }
-
-  .hero-grid .lead {
-    font-size: 1rem;
-    line-height: 1.65;
-    max-width: 570px;
-  }
-
-  .hero-grid .actions {
-    margin-top: 24px;
-  }
-
-  .hero-grid .trust-row {
-    margin-top: 28px;
-    gap: 20px;
-  }
-
-  /* Right-side artwork */
-  .hero-art {
-    min-height: 390px;
-  }
-
-  .circle {
-    width: 370px;
-    height: 370px;
-  }
-
-  .logo-orb {
-    width: 290px;
-    height: 290px;
-  }
-
-  .floating {
-    padding: 11px 14px;
-    font-size: .78rem;
-  }
-
-  .f1 {
-    top: 35px;
-    right: 0;
-  }
-
-  .f2 {
-    bottom: 45px;
-    left: 0;
-  }
-
-  .f3 {
-    right: 10px;
-    bottom: 5px;
-  }
-
-
-  /* ---------- GENERAL SECTIONS ---------- */
-
-  section {
-    padding: 72px 0;
-  }
-
-  .head {
-    margin-bottom: 40px;
-  }
-
-  .head h2 {
-    font-size: clamp(2rem, 2.8vw, 2.8rem);
-  }
-
-
-  /* ---------- SERVICE CARDS ---------- */
-
-  .card {
-    padding: 24px;
-  }
-
-
-  /* ---------- WHY JOTNOSETU ---------- */
-
-  .why-grid {
-    gap: 52px;
-  }
-
-  .care-art {
-    min-height: 390px;
-  }
-
-
-  /* ---------- BOOKING ---------- */
-
-  .booking-grid {
-    gap: 48px;
-  }
-
-}
-
-
-/* =========================
-   TABLET
-   ========================= */
-
-@media (min-width: 561px) and (max-width: 900px) {
-
-  .movie-banner {
-    width: 94%;
-    margin: 3px auto 5px;
-  }
-
-  .hero {
-    min-height: auto;
-  }
-
-  .hero-grid {
-    padding: 45px 0 55px;
-    gap: 35px;
-  }
-
-  .hero-grid h1 {
-    font-size: clamp(2.5rem, 6vw, 3.6rem);
-    line-height: 1.05;
-  }
-
-  .hero-art {
-    min-height: 360px;
-  }
-
-  .logo-orb {
-    width: 280px;
-    height: 280px;
-  }
-
-  .circle {
-    width: 350px;
-    height: 350px;
-  }
-
-}
-
-
-/* =========================
-   MOBILE
-   ========================= */
-
-@media (max-width: 560px) {
-
-  /* ---------- TOP BAR ---------- */
-
-  .top .container {
-    padding: 6px 0;
-    font-size: .70rem;
-    line-height: 1.35;
-  }
-
-  /* Hide temporary contact message */
-  .top .container span:last-child {
-    display: none;
-  }
-
-
-  /* ---------- NAVBAR ---------- */
-
-  .nav {
-    height: 70px;
-  }
-
-  .brand {
-    gap: 8px;
-  }
-
-  .brand img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .brand small {
-    font-size: .57rem;
-    letter-spacing: 1.6px;
-  }
-
-  .menu {
-    font-size: 1.7rem;
-  }
-
-
-  /* ---------- HERO ---------- */
-
-  .hero {
-    min-height: auto;
-    overflow: hidden;
-  }
-
-
-  /* ---------- BANNER ---------- */
-
-  .movie-banner {
-    width: calc(100% - 28px);
-    max-width: none;
-
-    /* Very small gap below navbar */
-    margin: 5px auto 0;
-
-    border-radius: 12px;
-  }
-
-  .banner-slide img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 7;
-    object-fit: cover;
-  }
-
-
-  /* ---------- HERO CONTENT ---------- */
-
-  .hero-grid {
-    padding: 38px 0 50px;
-    gap: 32px;
-  }
-
-
-  /* Small eyebrow */
-  .hero-grid .eyebrow {
-    font-size: .70rem;
-    letter-spacing: 1.35px;
-  }
-
-
-  /* Main heading */
-  .hero-grid h1 {
-    font-size: clamp(2.25rem, 10vw, 3rem);
-    line-height: 1.05;
-    letter-spacing: -1.1px;
-    margin: 10px 0 15px;
-  }
-
-
-  /* Description */
-  .hero-grid .lead {
-    font-size: .96rem;
-    line-height: 1.65;
-  }
-
-
-  /* Buttons */
-  .hero-grid .actions {
-    margin-top: 21px;
-    gap: 9px;
-  }
-
-  .hero-grid .btn {
-    padding: 11px 16px;
-    font-size: .84rem;
-    border-radius: 9px;
-  }
-
-
-  /* ---------- TRUST ROW ---------- */
-
-  .hero-grid .trust-row {
-    gap: 13px;
-    margin-top: 27px;
-  }
-
-  .hero-grid .trust-row div {
-    font-size: .76rem;
-    line-height: 1.5;
-    padding-left: 10px;
-  }
-
-  .hero-grid .trust-row strong {
-    font-size: .88rem;
-  }
-
-
-  /* ---------- HERO ART ---------- */
-
-  .hero-art {
-    min-height: 295px;
-  }
-
-  .circle {
-    width: 285px;
-    height: 285px;
-  }
-
-  .logo-orb {
-    width: 235px;
-    height: 235px;
-  }
-
-  .floating {
-    font-size: .68rem;
-    padding: 9px 11px;
-    border-radius: 11px;
-  }
-
-  .f1 {
-    top: 20px;
-    right: 0;
-  }
-
-  .f2 {
-    bottom: 42px;
-    left: 0;
-  }
-
-  .f3 {
-    right: 3px;
-    bottom: 3px;
-  }
-
-
-  /* ---------- GENERAL SECTION SPACING ---------- */
-
-  section {
-    padding: 54px 0;
-  }
-
-  .head {
-    margin-bottom: 34px;
-  }
-
-  .head h2 {
-    font-size: 2rem;
-    line-height: 1.12;
-  }
-
-
-  /* ---------- SERVICE CARDS ---------- */
-
-  .card {
-    padding: 22px;
-    border-radius: 17px;
-  }
-
-
-  /* ---------- WHY SECTION ---------- */
-
-  .why-grid {
-    gap: 38px;
-  }
-
-  .care-art {
-    min-height: 360px;
-    padding: 28px;
-  }
-
-
-  /* ---------- BOOKING ---------- */
-
-  .booking-grid {
-    gap: 35px;
-  }
-
-}
- </style>
-</head>
-<body>
-<div class="top"><div class="container"><span>JotnoSetu Home Healthcare • Caring Hearts. Healing Homes.</span><span>📞 Official contact details coming soon</span></div></div>
-<header><div class="container nav">
-<a class="brand" href="#home"><img src="DP.jpeg"><span>JotnoSetu<small>Home Health Care</small></span></a>
-<button class="menu" onclick="document.querySelector('.links').classList.toggle('show')">☰</button>
-<nav class="links"><a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#booking">Booking</a><a href="#agreement">Agreement</a><a href="#contact">Contact</a><a class="btn primary" href="#booking">Book Care</a></nav>
-</div></header>
-
-<main>
-<section class="hero" id="home">
- <div class="container">
-<div class="movie-banner">
-  <div class="banner-track">
-
-    <div class="banner-slide">
-      <img src="bannar1.png" alt="Banner 1">
-    </div>
-
-    <div class="banner-slide">
-      <img src="bannar2.png" alt="Banner 2">
-    </div>
-
-    <div class="banner-slide">
-      <img src="bannar3.png" alt="Banner 3">
-    </div>
-
-    <div class="banner-slide">
-      <img src="bannar1.png" alt="Banner 1">
-    </div>
-
-  </div>
-</div>
-   
- <div class="container hero-grid">
-<div><div class="eyebrow">Home Healthcare • Compassion • Support</div>
-<h1>Because the best care should feel <span>close to home.</span></h1>
-<p class="lead">JotnoSetu brings compassionate, organised and patient-centred support closer to families—helping make everyday care at home feel simpler, warmer and more reassuring.</p>
-<div class="actions"><a class="btn primary" href="#booking">Request Home Care</a><a class="btn secondary" href="#how">How It Works</a></div>
-<div class="trust-row"><div><strong>Home-first support</strong>Comfort in familiar surroundings</div><div><strong>Clear communication</strong>Understand the service before booking</div><div><strong>Human-centred</strong>Dignity, respect and compassion</div></div></div>
-<div class="hero-art"><div class="circle"></div><div class="logo-orb"><img src="page photo.png"></div><div class="floating f1">💙 Compassion first</div><div class="floating f2">🏠 Care at home</div><div class="floating f3">✓ Simple requests</div></div>
-</div></section>
-
-<section class="stats"><div class="container stat-grid">
-<div class="stat"><strong>HOME-FIRST</strong><span>Designed around everyday home support</span></div>
-<div class="stat"><strong>PERSON-CENTRED</strong><span>Respecting individual needs and dignity</span></div>
-<div class="stat"><strong>CLEAR PROCESS</strong><span>Request, discuss, confirm, support</span></div>
-<div class="stat"><strong>WARM APPROACH</strong><span>Professional without losing the human touch</span></div>
-</div></section>
-
-<section class="services" id="services"><div class="container">
-<div class="head"><div class="eyebrow">Our Services</div><h2>Practical support for care at home</h2><p>Our service categories can be refined as JotnoSetu grows and your final team structure is established.</p></div>
-<div class="cards">
-<div class="card"><div class="icon">🩹</div><h3>Basic Dressing Support</h3><p>Routine wound-care and dressing assistance according to the established treatment plan and appropriate service scope.</p><span class="service-link">Learn more →</span></div>
-<div class="card"><div class="icon">🩺</div><h3>Vitals Monitoring</h3><p>Support for routine measurement and recording of vital signs for home monitoring.</p><span class="service-link">Learn more →</span></div>
-<div class="card"><div class="icon">💊</div><h3>Medication Assistance</h3><p>Non-prescriptive reminders and practical support for following an existing medication schedule.</p><span class="service-link">Learn more →</span></div>
-<div class="card"><div class="icon">🥣</div><h3>Feeding Support</h3><p>General daily feeding assistance based on the patient's established needs and care instructions.</p><span class="service-link">Learn more →</span></div>
-<div class="card"><div class="icon">🛏️</div><h3>Catheter / Stoma Support</h3><p>Routine hygiene and basic assistance within the agreed caregiver role, training and service scope.</p><span class="service-link">Learn more →</span></div>
-<div class="card"><div class="icon">🤝</div><h3>Personal Care Support</h3><p>Help with everyday comfort, hygiene and non-critical daily care needs at home.</p><span class="service-link">Learn more →</span></div>
-</div></div></section>
-
-<section id="about"><div class="container why-grid">
-<div class="care-art"><div class="eyebrow" style="color:#8ff3ee">Why JotnoSetu?</div><h3>A bridge between caring hands and the comfort of home.</h3><p>Our name reflects our purpose: creating a supportive connection between patients, families and compassionate home-based care.</p><div class="mini-card"><strong>Caring Hearts. Healing Homes.</strong>Professionalism matters—but so do kindness, dignity and human connection.</div></div>
-<div><div class="eyebrow">Our Approach</div><h2 style="font-size:clamp(2rem,3vw,3rem);line-height:1.12;color:var(--navy);margin:10px 0 20px">Built around trust, clarity and compassion.</h2>
-<div class="points"><div class="point"><div class="tick">✓</div><div><h3>Clear service boundaries</h3><p>Families should know what support is being requested and what can realistically be provided.</p></div></div><div class="point"><div class="tick">✓</div><div><h3>Respect for every patient</h3><p>Care should protect comfort, privacy and dignity in the patient's own environment.</p></div></div><div class="point"><div class="tick">✓</div><div><h3>Simple communication</h3><p>We aim to make requesting and understanding home-care support straightforward for families.</p></div></div></div>
-</div></div></section>
-
-<section class="how" id="how"><div class="container"><div class="head"><div class="eyebrow">How Booking Works</div><h2>A simple path to requesting care</h2><p>The final workflow can later be connected to WhatsApp and your internal booking process.</p></div>
-<div class="steps"><div class="step"><div class="num">1</div><h3>Send a Request</h3><p>Tell us the basic support you are looking for.</p></div><div class="step"><div class="num">2</div><h3>We Review</h3><p>Your request is reviewed for service scope and availability.</p></div><div class="step"><div class="num">3</div><h3>Confirm Details</h3><p>Service needs, timing and terms are discussed before confirmation.</p></div><div class="step"><div class="num">4</div><h3>Care Begins</h3><p>Agreed home support begins according to the confirmed arrangement.</p></div></div></div></section>
-
-<section id="booking"><div class="container booking-grid">
-<div class="booking-copy"><div class="eyebrow">Request Home Care</div><h2>Tell us how we can help.</h2><p>This is your first professional booking interface. Right now it works as a demonstration form; later we can connect it directly to WhatsApp or an online booking database.</p><div class="note-list"><div>Choose the type of support needed</div><div>Share your preferred date and area</div><div>Receive confirmation based on availability</div></div></div>
-<form id="book"
-action="https://formspree.io/f/xqpkawwk"
-method="POST">
-<div class="form-grid">
-<div><label>Patient / Contact Name</label><input name="name" required placeholder="Full name"></div>
-<div><label>Phone Number</label><input name="phone" required type="tel" placeholder="Phone number"></div>
-<div><label>Required Service</label><select name="service"required><option value="">Select a service</option><option>Basic Dressing Support</option><option>Vitals Monitoring</option><option>Medication Assistance</option><option>Feeding Support</option><option>Catheter / Stoma Support</option><option>Personal Care Support</option><option>Other</option></select></div>
-<div><label>Preferred Date</label><input name="date" type="date"></div>
-<div class="full"><label>Address / Area</label><select name="area" id="serviceArea" required>
-    <option value="">Select your area</option>
-
-<option value="Ranaghat">Ranaghat</option>
-<option value="Chakdaha">Chakdaha</option>
-<option value="Kalyani">Kalyani</option>
-<option value="Kanchrapara">Kanchrapara</option>
-<option value="Halisahar">Halisahar</option>
-<option value="Naihati">Naihati</option>
-<option value="Ichhapur">Ichhapur</option>
-<option value="Barrackpore">Barrackpore</option>
-<option value="Other">Other / Not Listed</option>
-</select>
-<small class="service-area-note">
-    * Service area: Ranaghat to Barrackpore, within 3 km of stations.
-  </small>
-</div>
-
-<div class="full" id="otherAreaBox" style="display: none;">
-  <label>Enter Your Area</label>
-
-  <input
-    type="text"
-    name="other_area"
-    id="otherArea"
-    placeholder="Please enter your area name"
-  >
-</div>
-<div class="full"><label>Additional Information</label><textarea name="message" placeholder="Briefly describe the support needed..."></textarea></div>
-<div class="full terms-box"><label class="terms-label"><input type="checkbox" name="terms" value="Accepted" required><span>I agree to the<a hrep="#terms"target="_blank">Terms & Conditions</a>and understand that submitting this request does not guarantee a booking.Final availability and service terms will be confirmed by Jotnosetu.</span></label></div>
-<input type="hidden" name="_subject" value="New Home Healthcare Booking Request-Jotnosetu">
-<div class="full"><button class="btn primary" type="submit" id="submitBtn">Submit Request</button></div></div></form>
-<div id="bookingSuccess"class="booking-success" style="display:none;">
-<div class="success-icon">✓</div><h3>Request Submitted Successfully</h3><p>Thank you for contacting JotnoSetu.Your home healthcare request has been received.</p><p>Our team will review your request and contact you shortly to confirm availability and service details.</p>
-<button type="button" class="btn primary" onclick="resetBookingForm()">Submit Another Request</button></div>
-
-
-
-<section class="agreement" id="agreement"><div class="container"><div class="head"><div class="eyebrow">Service Agreement</div><h2>Clear expectations for better care</h2><p>A starter version that you can later replace with your final official agreement.</p></div>
-<div class="agreement-box"><ol><li>Services are provided only after the requested scope and availability are confirmed.</li><li>Families should provide accurate information relevant to the agreed care requirements.</li><li>Caregivers should provide only services within their agreed role, training and service scope.</li><li>Medical emergencies require immediate contact with emergency services or the treating doctor; JotnoSetu is not an emergency replacement service.</li><li>Payment, service duration, cancellation and replacement terms should be confirmed before service begins.</li><li>Both families and caregivers must maintain a respectful and safe environment.</li><li>Patient privacy and dignity should be respected by everyone involved.</li></ol>
-<div class="warning"><strong>Launch note:</strong> Before public launch, your final agreement, privacy policy, liability wording and applicable local regulatory requirements should be reviewed by a qualified professional.</div></div></div></section>
-
-<section class="testimonial"><div class="container"><div class="head"><div class="eyebrow">Our Promise</div><h2>Trust is earned through care.</h2></div><div class="quote"><div class="mark">“</div><p>We aim to create a home-care experience where families feel heard, patients feel respected, and every interaction reflects genuine care.</p><small>— JotnoSetu Home Healthcare</small></div></div></section>
-
-<section id="contact"><div class="container"><div class="head"><div class="eyebrow">Contact</div><h2>Let's talk about your care needs</h2><p>These details can be replaced with your official contact information before launch.</p></div>
-<div class="contact-grid"><div class="contact"><div class="icon">📞</div><h3>Call Us</h3><p>Official phone number coming soon</p></div><div class="contact"><div class="icon"><a href="https://wa.me/919093655767   "target="_blank"  rel="noopener">💬</a></div><h3>WhatsApp</h3><p>Chat with us on WhatsApp</p></div>
-<div class="icon">📍</div><h3>Service Area</h3><p>Ranaghat to Barrackpore</p>
-</div></div>
-</div></section>
-</main>
-
-<footer><div class="container foot"><div><img src="DP.jpeg"><h3>JotnoSetu Home Healthcare</h3><p>Caring Hearts. Healing Homes.</p></div><div><h3>Explore</h3><a href="#home">Home</a><a href="#services">Services</a><a href="#about">About Us</a><a href="#booking">Book Care</a></div><div><h3>Important</h3><a href="#agreement">Service Agreement</a><a href="#contact">Contact</a><a href="#how">How It Works</a></div></div><div class="container copy">© <span id="year"></span> JotnoSetu Home Healthcare. All rights reserved.</div></footer>
-
-<script>
-const bookingForm = document.getElementById("book");
-const submitBtn = document.getElementById("submitBtn");
-const successBox = document.getElementById("bookingSuccess");
-
-bookingForm.addEventListener("submit", async function(event) {
-
-  event.preventDefault();
-  submitBtn.disabled = true;
-  submitBtn.innerText = "Submitting...";
-
-  const formData = new FormData(bookingForm);
-
-  try {
-
-    const response = await fetch(bookingForm.action, {
-      method: "POST",
-      body: formData,
-      headers: {
-        "Accept": "application/json"
       }
+
+      .hero-grid {
+        padding: 38px 0 50px;
+        gap: 32px;
+      }
+
+      .hero-grid .eyebrow {
+        font-size: .70rem;
+        letter-spacing: 1.35px;
+      }
+
+      .hero-grid h1 {
+        font-size: clamp(2.25rem, 10vw, 3rem);
+        line-height: 1.05;
+        letter-spacing: -1.1px;
+        margin: 10px 0 15px;
+      }
+
+      .hero-grid .lead {
+        font-size: .96rem;
+        line-height: 1.65;
+      }
+
+      .hero-grid .actions {
+        margin-top: 21px;
+        gap: 9px;
+      }
+
+      .hero-grid .btn {
+        padding: 11px 16px;
+        font-size: .84rem;
+        border-radius: 9px;
+      }
+
+      .hero-grid .trust-row {
+        gap: 13px;
+        margin-top: 27px;
+      }
+
+      .hero-grid .trust-row div {
+        font-size: .76rem;
+        line-height: 1.5;
+        padding-left: 10px;
+      }
+
+      .hero-grid .trust-row strong {
+        font-size: .88rem;
+      }
+
+      .hero-art {
+        min-height: 295px;
+      }
+
+      .circle {
+        width: 285px;
+        height: 285px;
+      }
+
+      .logo-orb {
+        width: 235px;
+        height: 235px;
+      }
+
+      .floating {
+        font-size: .68rem;
+        padding: 9px 11px;
+        border-radius: 11px;
+      }
+
+      .f1 {
+        top: 20px;
+        right: 0;
+      }
+
+      .f2 {
+        bottom: 42px;
+        left: 0;
+      }
+
+      .f3 {
+        right: 3px;
+        bottom: 3px;
+      }
+
+      section {
+        padding: 54px 0;
+      }
+
+      .head {
+        margin-bottom: 34px;
+      }
+
+      .head h2 {
+        font-size: 2rem;
+        line-height: 1.12;
+      }
+
+      .cards,
+      .steps,
+      .contact-grid,
+      .form-grid,
+      .foot {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 22px;
+        border-radius: 17px;
+      }
+
+      .why-grid {
+        gap: 38px;
+      }
+
+      .care-art {
+        min-height: 360px;
+        padding: 28px;
+      }
+
+      .booking-grid {
+        gap: 35px;
+      }
+
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .12);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =======================================================
+       TOP BAR
+       ======================================================= -->
+
+  <div class="top">
+    <div class="container">
+      <span>JotnoSetu Home Healthcare • Caring Hearts. Healing Homes.</span>
+      <span>📞 Official contact details coming soon</span>
+    </div>
+  </div>
+
+
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
+
+  <header>
+    <div class="container nav">
+
+      <a class="brand" href="#home">
+        <img src="DP.jpeg" alt="JotnoSetu Logo">
+        <span>
+          JotnoSetu
+          <small>Home Health Care</small>
+        </span>
+      </a>
+
+      <button class="menu" type="button"
+        onclick="document.querySelector('.links').classList.toggle('show')">
+        ☰
+      </button>
+
+      <nav class="links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#booking">Booking</a>
+        <a href="#agreement">Agreement</a>
+        <a href="#contact">Contact</a>
+        <a class="btn primary" href="#booking">Book Care</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <!-- Banner Slider -->
+        <div class="movie-banner">
+          <div class="banner-track">
+
+            <div class="banner-slide">
+              <img src="bannar1.png" alt="Banner 1">
+            </div>
+
+            <div class="banner-slide">
+              <img src="bannar2.png" alt="Banner 2">
+            </div>
+
+            <div class="banner-slide">
+              <img src="bannar3.png" alt="Banner 3">
+            </div>
+
+            <!-- Clone of Banner 1 for seamless looping -->
+            <div class="banner-slide">
+              <img src="bannar1.png" alt="Banner 1">
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- Hero Content -->
+        <div class="container hero-grid">
+
+          <div>
+
+            <div class="eyebrow">
+              Home Healthcare • Compassion • Support
+            </div>
+
+            <h1>
+              Because the best care should feel
+              <span>close to home.</span>
+            </h1>
+
+            <p class="lead">
+              JotnoSetu brings compassionate, organised and patient-centred
+              support closer to families—helping make everyday care at home
+              feel simpler, warmer and more reassuring.
+            </p>
+
+            <div class="actions">
+              <a class="btn primary" href="#booking">
+                Request Home Care
+              </a>
+
+              <a class="btn secondary" href="#how">
+                How It Works
+              </a>
+            </div>
+
+            <div class="trust-row">
+
+              <div>
+                <strong>Home-first support</strong>
+                Comfort in familiar surroundings
+              </div>
+
+              <div>
+                <strong>Clear communication</strong>
+                Understand the service before booking
+              </div>
+
+              <div>
+                <strong>Human-centred</strong>
+                Dignity, respect and compassion
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Hero Artwork -->
+          <div class="hero-art">
+
+            <div class="circle"></div>
+
+            <div class="logo-orb">
+              <img src="page photo.png" alt="JotnoSetu Home Healthcare">
+            </div>
+
+            <div class="floating f1">
+              💙 Compassion first
+            </div>
+
+            <div class="floating f2">
+              🏠 Care at home
+            </div>
+
+            <div class="floating f3">
+              ✓ Simple requests
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STATS
+         ===================================================== -->
+
+    <section class="stats">
+
+      <div class="container stat-grid">
+
+        <div class="stat">
+          <strong>HOME-FIRST</strong>
+          <span>Designed around everyday home support</span>
+        </div>
+
+        <div class="stat">
+          <strong>PERSON-CENTRED</strong>
+          <span>Respecting individual needs and dignity</span>
+        </div>
+
+        <div class="stat">
+          <strong>CLEAR PROCESS</strong>
+          <span>Request, discuss, confirm, support</span>
+        </div>
+
+        <div class="stat">
+          <strong>WARM APPROACH</strong>
+          <span>Professional without losing the human touch</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES
+         ===================================================== -->
+
+    <section class="services" id="services">
+
+      <div class="container">
+
+        <div class="head">
+          <div class="eyebrow">Our Services</div>
+
+          <h2>
+            Practical support for care at home
+          </h2>
+
+          <p>
+            Our service categories can be refined as JotnoSetu grows
+            and your final team structure is established.
+          </p>
+        </div>
+
+
+        <div class="cards">
+
+          <div class="card">
+            <div class="icon">🩹</div>
+            <h3>Basic Dressing Support</h3>
+            <p>
+              Routine wound-care and dressing assistance according to
+              the established treatment plan and appropriate service scope.
+            </p>
+            <span class="service-link">Learn more →</span>
+          </div>
+
+          <div class="card">
+            <div class="icon">🩺</div>
+            <h3>Vitals Monitoring</h3>
+            <p>
+              Support for routine measurement and recording of vital
+              signs for home monitoring.
+            </p>
+            <span class="service-link">Learn more →</span>
+          </div>
+
+          <div class="card">
+            <div class="icon">💊</div>
+            <h3>Medication Assistance</h3>
+            <p>
+              Non-prescriptive reminders and practical support for
+              following an existing medication schedule.
+            </p>
+            <span class="service-link">Learn more →</span>
+          </div>
+
+          <div class="card">
+            <div class="icon">🥣</div>
+            <h3>Feeding Support</h3>
+            <p>
+              General daily feeding assistance based on the patient's
+              established needs and care instructions.
+            </p>
+            <span class="service-link">Learn more →</span>
+          </div>
+
+          <div class="card">
+            <div class="icon">🛏️</div>
+            <h3>Catheter / Stoma Support</h3>
+            <p>
+              Routine hygiene and basic assistance within the agreed
+              caregiver role, training and service scope.
+            </p>
+            <span class="service-link">Learn more →</span>
+          </div>
+
+          <div class="card">
+            <div class="icon">🤝</div>
+            <h3>Personal Care Support</h3>
+            <p>
+              Help with everyday comfort, hygiene and non-critical
+              daily care needs at home.
+            </p>
+            <span class="service-link">Learn more →</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT / WHY JOTNOSETU
+         ===================================================== -->
+
+    <section id="about">
+
+      <div class="container why-grid">
+
+        <div class="care-art">
+
+          <div class="eyebrow" style="color:#8ff3ee">
+            Why JotnoSetu?
+          </div>
+
+          <h3>
+            A bridge between caring hands and the comfort of home.
+          </h3>
+
+          <p>
+            Our name reflects our purpose: creating a supportive
+            connection between patients, families and compassionate
+            home-based care.
+          </p>
+
+          <div class="mini-card">
+            <strong>Caring Hearts. Healing Homes.</strong>
+            Professionalism matters—but so do kindness, dignity
+            and human connection.
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="eyebrow">Our Approach</div>
+
+          <h2 style="font-size:clamp(2rem,3vw,3rem);line-height:1.12;color:var(--navy);margin:10px 0 20px">
+            Built around trust, clarity and compassion.
+          </h2>
+
+          <div class="points">
+
+            <div class="point">
+              <div class="tick">✓</div>
+
+              <div>
+                <h3>Clear service boundaries</h3>
+                <p>
+                  Families should know what support is being requested
+                  and what can realistically be provided.
+                </p>
+              </div>
+            </div>
+
+            <div class="point">
+              <div class="tick">✓</div>
+
+              <div>
+                <h3>Respect for every patient</h3>
+                <p>
+                  Care should protect comfort, privacy and dignity
+                  in the patient's own environment.
+                </p>
+              </div>
+            </div>
+
+            <div class="point">
+              <div class="tick">✓</div>
+
+              <div>
+                <h3>Simple communication</h3>
+                <p>
+                  We aim to make requesting and understanding
+                  home-care support straightforward for families.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         HOW IT WORKS
+         ===================================================== -->
+
+    <section class="how" id="how">
+
+      <div class="container">
+
+        <div class="head">
+          <div class="eyebrow">How Booking Works</div>
+
+          <h2>
+            A simple path to requesting care
+          </h2>
+
+          <p>
+            The final workflow can later be connected to WhatsApp
+            and your internal booking process.
+          </p>
+        </div>
+
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="num">1</div>
+            <h3>Send a Request</h3>
+            <p>
+              Tell us the basic support you are looking for.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="num">2</div>
+            <h3>We Review</h3>
+            <p>
+              Your request is reviewed for service scope and availability.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="num">3</div>
+            <h3>Confirm Details</h3>
+            <p>
+              Service needs, timing and terms are discussed before confirmation.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="num">4</div>
+            <h3>Care Begins</h3>
+            <p>
+              Agreed home support begins according to the confirmed arrangement.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BOOKING
+         ===================================================== -->
+
+    <section id="booking">
+
+      <div class="container booking-grid">
+
+        <div class="booking-copy">
+
+          <div class="eyebrow">
+            Request Home Care
+          </div>
+
+          <h2>
+            Tell us how we can help.
+          </h2>
+
+          <p>
+            This is your first professional booking interface.
+            Right now it works as a demonstration form; later we can
+            connect it directly to WhatsApp or an online booking database.
+          </p>
+
+          <div class="note-list">
+            <div>Choose the type of support needed</div>
+            <div>Share your preferred date and area</div>
+            <div>Receive confirmation based on availability</div>
+          </div>
+
+        </div>
+
+
+        <!-- Booking Form -->
+
+        <form
+          id="book"
+          action="https://formspree.io/f/xqpkawwk"
+          method="POST"
+        >
+
+          <div class="form-grid">
+
+            <div>
+              <label>Patient / Contact Name</label>
+              <input
+                name="name"
+                required
+                placeholder="Full name"
+              >
+            </div>
+
+            <div>
+              <label>Phone Number</label>
+              <input
+                name="phone"
+                required
+                type="tel"
+                placeholder="Phone number"
+              >
+            </div>
+
+            <div>
+              <label>Required Service</label>
+
+              <select name="service" required>
+                <option value="">Select a service</option>
+                <option>Basic Dressing Support</option>
+                <option>Vitals Monitoring</option>
+                <option>Medication Assistance</option>
+                <option>Feeding Support</option>
+                <option>Catheter / Stoma Support</option>
+                <option>Personal Care Support</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label>Preferred Date</label>
+
+              <input
+                name="date"
+                type="date"
+              >
+            </div>
+
+
+            <div class="full">
+
+              <label>Address / Area</label>
+
+              <select
+                name="area"
+                id="serviceArea"
+                required
+              >
+                <option value="">Select your area</option>
+                <option value="Ranaghat">Ranaghat</option>
+                <option value="Chakdaha">Chakdaha</option>
+                <option value="Kalyani">Kalyani</option>
+                <option value="Kanchrapara">Kanchrapara</option>
+                <option value="Halisahar">Halisahar</option>
+                <option value="Naihati">Naihati</option>
+                <option value="Ichhapur">Ichhapur</option>
+                <option value="Barrackpore">Barrackpore</option>
+                <option value="Other">Other / Not Listed</option>
+              </select>
+
+              <small class="service-area-note">
+                * Service area: Ranaghat to Barrackpore, within 3 km of stations.
+              </small>
+
+            </div>
+
+
+            <div
+              class="full"
+              id="otherAreaBox"
+              style="display:none;"
+            >
+
+              <label>Enter Your Area</label>
+
+              <input
+                type="text"
+                name="other_area"
+                id="otherArea"
+                placeholder="Please enter your area name"
+              >
+
+            </div>
+
+
+            <div class="full">
+
+              <label>Additional Information</label>
+
+              <textarea
+                name="message"
+                placeholder="Briefly describe the support needed..."
+              ></textarea>
+
+            </div>
+
+
+            <div class="full terms-box">
+
+              <label class="terms-label">
+
+                <input
+                  type="checkbox"
+                  name="terms"
+                  value="Accepted"
+                  required
+                >
+
+                <span>
+                  I agree to the
+                  <a href="#terms" target="_blank">
+                    Terms & Conditions
+                  </a>
+                  and understand that submitting this request does not
+                  guarantee a booking. Final availability and service
+                  terms will be confirmed by JotnoSetu.
+                </span>
+
+              </label>
+
+            </div>
+
+
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Home Healthcare Booking Request - JotnoSetu"
+            >
+
+
+            <div class="full">
+
+              <button
+                class="btn primary"
+                type="submit"
+                id="submitBtn"
+              >
+                Submit Request
+              </button>
+
+            </div>
+
+          </div>
+
+        </form>
+
+
+        <!-- Booking Success -->
+
+        <div
+          id="bookingSuccess"
+          class="booking-success"
+          style="display:none;"
+        >
+
+          <div class="success-icon">✓</div>
+
+          <h3>
+            Request Submitted Successfully
+          </h3>
+
+          <p>
+            Thank you for contacting JotnoSetu.
+            Your home healthcare request has been received.
+          </p>
+
+          <p>
+            Our team will review your request and contact you shortly
+            to confirm availability and service details.
+          </p>
+
+          <button
+            type="button"
+            class="btn primary"
+            onclick="resetBookingForm()"
+          >
+            Submit Another Request
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICE AGREEMENT
+         ===================================================== -->
+
+    <section class="agreement" id="agreement">
+
+      <div class="container">
+
+        <div class="head">
+          <div class="eyebrow">Service Agreement</div>
+
+          <h2>
+            Clear expectations for better care
+          </h2>
+
+          <p>
+            A starter version that you can later replace
+            with your final official agreement.
+          </p>
+        </div>
+
+
+        <div class="agreement-box">
+
+          <ol>
+
+            <li>
+              Services are provided only after the requested scope
+              and availability are confirmed.
+            </li>
+
+            <li>
+              Families should provide accurate information relevant
+              to the agreed care requirements.
+            </li>
+
+            <li>
+              Caregivers should provide only services within their
+              agreed role, training and service scope.
+            </li>
+
+            <li>
+              Medical emergencies require immediate contact with
+              emergency services or the treating doctor; JotnoSetu
+              is not an emergency replacement service.
+            </li>
+
+            <li>
+              Payment, service duration, cancellation and replacement
+              terms should be confirmed before service begins.
+            </li>
+
+            <li>
+              Both families and caregivers must maintain a respectful
+              and safe environment.
+            </li>
+
+            <li>
+              Patient privacy and dignity should be respected by
+              everyone involved.
+            </li>
+
+          </ol>
+
+
+          <div class="warning">
+
+            <strong>Launch note:</strong>
+            Before public launch, your final agreement, privacy policy,
+            liability wording and applicable local regulatory requirements
+            should be reviewed by a qualified professional.
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TESTIMONIAL
+         ===================================================== -->
+
+    <section class="testimonial">
+
+      <div class="container">
+
+        <div class="head">
+          <div class="eyebrow">Our Promise</div>
+
+          <h2>
+            Trust is earned through care.
+          </h2>
+        </div>
+
+
+        <div class="quote">
+
+          <div class="mark">“</div>
+
+          <p>
+            We aim to create a home-care experience where families
+            feel heard, patients feel respected, and every interaction
+            reflects genuine care.
+          </p>
+
+          <small>
+            — JotnoSetu Home Healthcare
+          </small>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+         ===================================================== -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="head">
+
+          <div class="eyebrow">Contact</div>
+
+          <h2>
+            Let's talk about your care needs
+          </h2>
+
+          <p>
+            These details can be replaced with your official
+            contact information before launch.
+          </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+          <div class="contact">
+
+            <div class="icon">📞</div>
+
+            <h3>Call Us</h3>
+
+            <p>
+              Official phone number coming soon
+            </p>
+
+          </div>
+
+
+          <div class="contact">
+
+            <div class="icon">
+
+              <a
+                href="https://wa.me/919093655767"
+                target="_blank"
+                rel="noopener"
+              >
+                💬
+              </a>
+
+            </div>
+
+            <h3>WhatsApp</h3>
+
+            <p>
+              Chat with us on WhatsApp
+            </p>
+
+          </div>
+
+
+          <div class="contact">
+
+            <div class="icon">📍</div>
+
+            <h3>Service Area</h3>
+
+            <p>
+              Ranaghat to Barrackpore
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer>
+
+    <div class="container foot">
+
+      <div>
+
+        <img
+          src="DP.jpeg"
+          alt="JotnoSetu Logo"
+        >
+
+        <h3>
+          JotnoSetu Home Healthcare
+        </h3>
+
+        <p>
+          Caring Hearts. Healing Homes.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>Explore</h3>
+
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#booking">Book Care</a>
+
+      </div>
+
+
+      <div>
+
+        <h3>Important</h3>
+
+        <a href="#agreement">Service Agreement</a>
+        <a href="#contact">Contact</a>
+        <a href="#how">How It Works</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="container copy">
+
+      © <span id="year"></span>
+      JotnoSetu Home Healthcare. All rights reserved.
+
+    </div>
+
+  </footer>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
+
+  <script>
+
+    /* =====================================================
+       BOOKING FORM
+       ===================================================== */
+
+    const bookingForm = document.getElementById("book");
+    const submitBtn = document.getElementById("submitBtn");
+    const successBox = document.getElementById("bookingSuccess");
+
+
+    bookingForm.addEventListener("submit", async function (event) {
+
+      event.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Submitting...";
+
+      const formData = new FormData(bookingForm);
+
+      try {
+
+        const response = await fetch(bookingForm.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+
+        if (response.ok) {
+
+          bookingForm.style.display = "none";
+          successBox.style.display = "block";
+
+          successBox.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
+          bookingForm.reset();
+
+        } else {
+
+          throw new Error("Submission failed");
+
+        }
+
+      } catch (error) {
+
+        alert(
+          "Sorry, your request could not be submitted right now. " +
+          "Please try again after a moment."
+        );
+
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit Request";
+
+      }
+
     });
 
-    if (response.ok) {
-bookingForm.style.display = "none";
-successBox.style.display = "block";
-successBox.scrollIntoView({
+
+    function resetBookingForm() {
+
+      successBox.style.display = "none";
+      bookingForm.style.display = "block";
+
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Submit Request";
+
+      bookingForm.scrollIntoView({
         behavior: "smooth",
-        block: "center"
+        block: "start"
       });
-
-      bookingForm.reset();
-
-    } else {
-
-      throw new Error("Submission failed");
 
     }
 
-  } catch (error) {
 
-    alert(
-      "Sorry, your request could not be submitted right now. " +
-      "Please try again after a moment."
-    );
-
-    submitBtn.disabled = false;
-    submitBtn.innerText = "Submit Request";
-  }
-
-});
-
-function resetBookingForm() {
-
-  successBox.style.display = "none";
-  bookingForm.style.display = "block";
-
-  submitBtn.disabled = false;
-  submitBtn.innerText = "Submit Request";
-
-  bookingForm.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-}
-</script>
-</body>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+    /* =====================================================
+       SERVICE AREA
+       ===================================================== */
 
     const areaSelect = document.getElementById("serviceArea");
     const otherAreaBox = document.getElementById("otherAreaBox");
 
+
     areaSelect.addEventListener("change", function () {
 
-        if (this.value === "Other") {
-            otherAreaBox.style.display = "block";
-        } else {
-            otherAreaBox.style.display = "none";
-        }
+      if (this.value === "Other") {
+
+        otherAreaBox.style.display = "block";
+
+      } else {
+
+        otherAreaBox.style.display = "none";
+
+      }
 
     });
 
-});
-</script>
-<script>
 
-let currentBanner = 0;
-let isMoving = false;
+    /* =====================================================
+       COPYRIGHT YEAR
+       ===================================================== */
 
-const banner = document.querySelector(".movie-banner");
-const track = document.querySelector(".banner-track");
-
-const totalBanners = 3;
-const slideWidth = 25;
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
 
-/* =========================
-   MOVE TO NEXT
-========================= */
+    /* =====================================================
+       BANNER SLIDER
+       ===================================================== */
 
-function nextBanner() {
+    let currentBanner = 0;
+    let isMoving = false;
 
-    if (isMoving) return;
+    const banner = document.querySelector(".movie-banner");
+    const track = document.querySelector(".banner-track");
 
-    isMoving = true;
+    const totalBanners = 3;
+    const slideWidth = 25;
 
-    currentBanner++;
 
-    track.style.transition = "transform 0.6s ease-in-out";
+    /* -----------------------------------------------------
+       NEXT BANNER
+       ----------------------------------------------------- */
 
-    track.style.transform =
+    function nextBanner() {
+
+      if (isMoving) return;
+
+      isMoving = true;
+      currentBanner++;
+
+      track.style.transition =
+        "transform 0.6s ease-in-out";
+
+      track.style.transform =
         "translateX(-" + (currentBanner * slideWidth) + "%)";
-}
+
+    }
 
 
-/* =========================
-   MOVE TO PREVIOUS
-========================= */
+    /* -----------------------------------------------------
+       PREVIOUS BANNER
+       ----------------------------------------------------- */
 
-function previousBanner() {
+    function previousBanner() {
 
-    if (isMoving) return;
+      if (isMoving) return;
 
-    isMoving = true;
+      isMoving = true;
 
-    if (currentBanner === 0) {
+      if (currentBanner === 0) {
 
         track.style.transition = "none";
 
         currentBanner = totalBanners;
 
         track.style.transform =
-            "translateX(-" + (currentBanner * slideWidth) + "%)";
+          "translateX(-" + (currentBanner * slideWidth) + "%)";
 
         track.offsetHeight;
 
         requestAnimationFrame(function () {
 
-            track.style.transition =
-                "transform 0.6s ease-in-out";
+          track.style.transition =
+            "transform 0.6s ease-in-out";
 
-            currentBanner--;
+          currentBanner--;
 
-            track.style.transform =
-                "translateX(-" + (currentBanner * slideWidth) + "%)";
+          track.style.transform =
+            "translateX(-" + (currentBanner * slideWidth) + "%)";
 
         });
 
-    } else {
+      } else {
 
         currentBanner--;
 
         track.style.transition =
-            "transform 0.6s ease-in-out";
+          "transform 0.6s ease-in-out";
 
         track.style.transform =
-            "translateX(-" + (currentBanner * slideWidth) + "%)";
+          "translateX(-" + (currentBanner * slideWidth) + "%)";
+
+      }
+
     }
-}
 
 
-/* =========================
-   LOOP AFTER BANNER 3
-========================= */
+    /* -----------------------------------------------------
+       SEAMLESS LOOP
+       ----------------------------------------------------- */
 
-track.addEventListener("transitionend", function () {
+    track.addEventListener("transitionend", function () {
 
-    if (currentBanner === totalBanners) {
-
-        /*
-        Banner 3 → Clone Banner 1
-        animation finishes here.
-        Now silently return to real Banner 1.
-        */
+      if (currentBanner === totalBanners) {
 
         track.style.transition = "none";
 
@@ -890,85 +2509,91 @@ track.addEventListener("transitionend", function () {
 
         track.style.transform = "translateX(0)";
 
-        /*
-        Force browser to apply the reset
-        before enabling animation again.
-        */
-
         track.offsetHeight;
 
         requestAnimationFrame(function () {
 
-            track.style.transition =
-                "transform 0.6s ease-in-out";
+          track.style.transition =
+            "transform 0.6s ease-in-out";
 
-            isMoving = false;
+          isMoving = false;
 
         });
 
-    } else {
+      } else {
 
         isMoving = false;
 
-    }
+      }
 
-});
-
-
-/* =========================
-   AUTOMATIC SLIDER
-========================= */
-
-setInterval(function () {
-
-    nextBanner();
-
-}, 4000);
+    });
 
 
-/* =========================
-   FINGER SWIPE
-========================= */
+    /* -----------------------------------------------------
+       AUTOMATIC SLIDER
+       ----------------------------------------------------- */
 
-let startX = 0;
-let startY = 0;
-
-banner.addEventListener("touchstart", function (e) {
-
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-
-}, { passive: true });
+    setInterval(function () {
+      nextBanner();
+    }, 4000);
 
 
-banner.addEventListener("touchend", function (e) {
+    /* -----------------------------------------------------
+       FINGER SWIPE
+       ----------------------------------------------------- */
 
-    const endX = e.changedTouches[0].clientX;
-    const endY = e.changedTouches[0].clientY;
+    let startX = 0;
+    let startY = 0;
 
-    const differenceX = startX - endX;
-    const differenceY = startY - endY;
 
-    if (Math.abs(differenceX) > Math.abs(differenceY)) {
+    banner.addEventListener(
+      "touchstart",
+      function (event) {
 
-        /* LEFT SWIPE → NEXT */
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
 
-        if (differenceX > 50) {
+      },
+      { passive: true }
+    );
+
+
+    banner.addEventListener(
+      "touchend",
+      function (event) {
+
+        const endX = event.changedTouches[0].clientX;
+        const endY = event.changedTouches[0].clientY;
+
+        const differenceX = startX - endX;
+        const differenceY = startY - endY;
+
+
+        if (Math.abs(differenceX) > Math.abs(differenceY)) {
+
+          /* LEFT SWIPE → NEXT */
+
+          if (differenceX > 50) {
 
             nextBanner();
 
-        }
+          }
 
-        /* RIGHT SWIPE → PREVIOUS */
+          /* RIGHT SWIPE → PREVIOUS */
 
-        else if (differenceX < -50) {
+          else if (differenceX < -50) {
 
             previousBanner();
 
+          }
+
         }
 
-    }
+      },
+      { passive: true }
+    );
 
-}, { passive: true });
-</script>
+  </script>
+
+</body>
 </html>

@@ -172,6 +172,408 @@ footer{background:#041d3d;color:#c6d7e4;padding:55px 0 20px}.foot{display:grid;g
         object-fit: contain;
     }
 }
+/* =========================================================
+   JOTNOSETU — RESPONSIVE SIZE & SPACE OPTIMIZATION
+   Desktop + Laptop + Tablet + Mobile
+   ========================================================= */
+
+
+/* =========================
+   DESKTOP / LAPTOP
+   ========================= */
+
+@media (min-width: 901px) {
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    min-height: auto;
+    overflow: hidden;
+  }
+
+  /* Banner: controlled width instead of full available width */
+  .movie-banner {
+    width: 100%;
+    max-width: 1040px;
+    margin: 22px auto 34px;
+    border-radius: 16px;
+  }
+
+  .banner-slide img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+  }
+
+  /* Main hero content */
+  .hero-grid {
+    padding: 48px 0 58px;
+    gap: 48px;
+    align-items: center;
+  }
+
+  /* Prevent oversized heading */
+  .hero-grid h1 {
+    font-size: clamp(2.6rem, 3.8vw, 4rem);
+    line-height: 1.06;
+    letter-spacing: -1.6px;
+    margin: 12px 0 17px;
+    max-width: 620px;
+  }
+
+  .hero-grid .lead {
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 570px;
+  }
+
+  .hero-grid .actions {
+    margin-top: 24px;
+  }
+
+  .hero-grid .trust-row {
+    margin-top: 28px;
+    gap: 20px;
+  }
+
+  /* Right-side artwork */
+  .hero-art {
+    min-height: 390px;
+  }
+
+  .circle {
+    width: 370px;
+    height: 370px;
+  }
+
+  .logo-orb {
+    width: 290px;
+    height: 290px;
+  }
+
+  .floating {
+    padding: 11px 14px;
+    font-size: .78rem;
+  }
+
+  .f1 {
+    top: 35px;
+    right: 0;
+  }
+
+  .f2 {
+    bottom: 45px;
+    left: 0;
+  }
+
+  .f3 {
+    right: 10px;
+    bottom: 5px;
+  }
+
+
+  /* ---------- GENERAL SECTIONS ---------- */
+
+  section {
+    padding: 72px 0;
+  }
+
+  .head {
+    margin-bottom: 40px;
+  }
+
+  .head h2 {
+    font-size: clamp(2rem, 2.8vw, 2.8rem);
+  }
+
+
+  /* ---------- SERVICE CARDS ---------- */
+
+  .card {
+    padding: 24px;
+  }
+
+
+  /* ---------- WHY JOTNOSETU ---------- */
+
+  .why-grid {
+    gap: 52px;
+  }
+
+  .care-art {
+    min-height: 390px;
+  }
+
+
+  /* ---------- BOOKING ---------- */
+
+  .booking-grid {
+    gap: 48px;
+  }
+
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (min-width: 561px) and (max-width: 900px) {
+
+  .movie-banner {
+    width: 94%;
+    margin: 18px auto 28px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-grid {
+    padding: 45px 0 55px;
+    gap: 35px;
+  }
+
+  .hero-grid h1 {
+    font-size: clamp(2.5rem, 6vw, 3.6rem);
+    line-height: 1.05;
+  }
+
+  .hero-art {
+    min-height: 360px;
+  }
+
+  .logo-orb {
+    width: 280px;
+    height: 280px;
+  }
+
+  .circle {
+    width: 350px;
+    height: 350px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 560px) {
+
+  /* ---------- TOP BAR ---------- */
+
+  .top .container {
+    padding: 6px 0;
+    font-size: .70rem;
+    line-height: 1.35;
+  }
+
+  /* Hide temporary contact message */
+  .top .container span:last-child {
+    display: none;
+  }
+
+
+  /* ---------- NAVBAR ---------- */
+
+  .nav {
+    height: 70px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand small {
+    font-size: .57rem;
+    letter-spacing: 1.6px;
+  }
+
+  .menu {
+    font-size: 1.7rem;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    min-height: auto;
+    overflow: hidden;
+  }
+
+
+  /* ---------- BANNER ---------- */
+
+  .movie-banner {
+    width: calc(100% - 28px);
+    max-width: none;
+
+    /* Very small gap below navbar */
+    margin: 10px auto 0;
+
+    border-radius: 12px;
+  }
+
+  .banner-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+  }
+
+
+  /* ---------- HERO CONTENT ---------- */
+
+  .hero-grid {
+    padding: 38px 0 50px;
+    gap: 32px;
+  }
+
+
+  /* Small eyebrow */
+  .hero-grid .eyebrow {
+    font-size: .70rem;
+    letter-spacing: 1.35px;
+  }
+
+
+  /* Main heading */
+  .hero-grid h1 {
+    font-size: clamp(2.25rem, 10vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -1.1px;
+    margin: 10px 0 15px;
+  }
+
+
+  /* Description */
+  .hero-grid .lead {
+    font-size: .96rem;
+    line-height: 1.65;
+  }
+
+
+  /* Buttons */
+  .hero-grid .actions {
+    margin-top: 21px;
+    gap: 9px;
+  }
+
+  .hero-grid .btn {
+    padding: 11px 16px;
+    font-size: .84rem;
+    border-radius: 9px;
+  }
+
+
+  /* ---------- TRUST ROW ---------- */
+
+  .hero-grid .trust-row {
+    gap: 13px;
+    margin-top: 27px;
+  }
+
+  .hero-grid .trust-row div {
+    font-size: .76rem;
+    line-height: 1.5;
+    padding-left: 10px;
+  }
+
+  .hero-grid .trust-row strong {
+    font-size: .88rem;
+  }
+
+
+  /* ---------- HERO ART ---------- */
+
+  .hero-art {
+    min-height: 295px;
+  }
+
+  .circle {
+    width: 285px;
+    height: 285px;
+  }
+
+  .logo-orb {
+    width: 235px;
+    height: 235px;
+  }
+
+  .floating {
+    font-size: .68rem;
+    padding: 9px 11px;
+    border-radius: 11px;
+  }
+
+  .f1 {
+    top: 20px;
+    right: 0;
+  }
+
+  .f2 {
+    bottom: 42px;
+    left: 0;
+  }
+
+  .f3 {
+    right: 3px;
+    bottom: 3px;
+  }
+
+
+  /* ---------- GENERAL SECTION SPACING ---------- */
+
+  section {
+    padding: 54px 0;
+  }
+
+  .head {
+    margin-bottom: 34px;
+  }
+
+  .head h2 {
+    font-size: 2rem;
+    line-height: 1.12;
+  }
+
+
+  /* ---------- SERVICE CARDS ---------- */
+
+  .card {
+    padding: 22px;
+    border-radius: 17px;
+  }
+
+
+  /* ---------- WHY SECTION ---------- */
+
+  .why-grid {
+    gap: 38px;
+  }
+
+  .care-art {
+    min-height: 360px;
+    padding: 28px;
+  }
+
+
+  /* ---------- BOOKING ---------- */
+
+  .booking-grid {
+    gap: 35px;
+  }
+
+}
  </style>
 </head>
 <body>

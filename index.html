@@ -1353,13 +1353,71 @@
 
       .stat {
         border-right: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, .12);
+        border-bottom: 1px sol/* =========================================================
+   BANNER CTA BUTTONS
+   Only affects the two buttons under the banner
+   ========================================================= */
+
+.banner-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 22px auto 8px;
+  padding: 0 15px;
+}
+
+.banner-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 145px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  font-weight: 850;
+  font-size: .92rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.banner-cta .call-now {
+  background: var(--navy);
+  color: white;
+  box-shadow: 0 10px 25px rgba(7, 45, 88, .16);
+}
+
+.banner-cta .book-now {
+  background: linear-gradient(135deg, var(--navy), var(--teal));
+  color: white;
+  box-shadow: 0 10px 25px rgba(10, 87, 124, .18);
+}
+
+.banner-cta a:hover {
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .banner-cta {
+    gap: 10px;
+    margin: 18px auto 5px;
+    padding: 0 14px;
+  }
+
+  .banner-cta a {
+    min-width: 135px;
+    padding: 11px 15px;
+    font-size: .84rem;
+  }
+}id rgba(255, 255, 255, .12);
       }
 
       .stat:last-child {
         border-bottom: 0;
       }
     }
+    
   </style>
 </head>
 
@@ -1444,8 +1502,28 @@
             </div>
 
           </div>
-        </div>
+        </div><div class="movie-banner">
+  <div class="banner-track">
 
+    <div class="banner-slide">
+      <img src="bannar1.png" alt="Banner 1">
+    </div>
+
+    <div class="banner-slide">
+      <img src="bannar2.png" alt="Banner 2">
+    </div>
+
+    <div class="banner-slide">
+      <img src="bannar3.png" alt="Banner 3">
+    </div>
+
+    <div class="banner-slide">
+      <img src="bannar1.png" alt="Banner 1">
+    </div>
+
+  </div>
+</div>
+        
 
         <!-- Hero Content -->
         <div class="container hero-grid">

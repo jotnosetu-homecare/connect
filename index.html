@@ -171,6 +171,69 @@
       color: var(--navy);
     }
 
+    /* HERO CALL & BOOK BUTTONS */
+.hero-action-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.hero-action-buttons .hero-call,
+.hero-action-buttons .hero-book {
+  min-width: 155px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-size: .95rem;
+  font-weight: 850;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: white;
+  border: none;
+  box-shadow: 0 10px 25px rgba(7, 45, 88, .16);
+  transition: .25s ease;
+}
+
+.hero-action-buttons .hero-call {
+  background: var(--navy);
+}
+
+.hero-action-buttons .hero-book {
+  background: var(--teal);
+}
+
+.hero-action-buttons .hero-call:hover,
+.hero-action-buttons .hero-book:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(7, 45, 88, .22);
+}
+
+.hero-action-buttons .button-icon {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.18);
+  display: inline-grid;
+  place-items: center;
+  font-size: .9rem;
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .hero-action-buttons {
+    gap: 10px;
+    margin-top: 21px;
+  }
+
+  .hero-action-buttons .hero-call,
+  .hero-action-buttons .hero-book {
+    min-width: 140px;
+    padding: 11px 16px;
+    font-size: .84rem;
+  }
+
 
     /* =========================================================
        HERO
@@ -1466,15 +1529,19 @@
               feel simpler, warmer and more reassuring.
             </p>
 
-            <div class="actions">
-              <a class="btn primary" href="#booking">
-                Request Home Care
-              </a>
+            <div class="hero-action-buttons">
 
-              <a class="btn secondary" href="#how">
-                How It Works
-              </a>
-            </div>
+  <a class="hero-call" href="tel:+919093655767">
+    <span class="button-icon">☎</span>
+    Call Now
+  </a>
+
+  <a class="hero-book" href="#booking">
+    <span class="button-icon">▣</span>
+    Book Now
+  </a>
+
+</div>
 
             <div class="trust-row">
 

@@ -253,6 +253,140 @@
   }
 }
 
+    
+/* =========================================================
+   JOTNOSETU — PREMIUM BRAND REFINEMENT
+   1. Elegant typography
+   2. Refined bridge
+   3. Better subtitle spacing
+   4. Balanced header spacing
+   ========================================================= */
+
+/* ---------- 1. ELEGANT BRAND TYPOGRAPHY ---------- */
+
+.brand-name {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brand-title {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.95rem;
+  letter-spacing: -0.4px;
+  line-height: .95;
+}
+
+.brand-title .jotno {
+  color: var(--navy);
+}
+
+.brand-title .setu {
+  color: var(--teal);
+}
+
+
+/* ---------- 2. REFINED BRIDGE ---------- */
+
+.brand-bridge {
+  display: block;
+  width: 100%;
+  height: 18px;
+  margin-top: 4px;
+  overflow: visible;
+}
+
+
+/* ---------- 3. PREMIUM SUBTITLE ---------- */
+
+.brand-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: normal;
+  font-size: .53rem;
+  font-weight: 700;
+  letter-spacing: 2.15px;
+  line-height: 1;
+  color: var(--navy);
+}
+
+.brand-subtitle span {
+  display: block;
+}
+
+.brand-subtitle i {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  flex-shrink: 0;
+  background: var(--teal);
+  border-radius: 20px;
+}
+
+
+/* ---------- 4. BALANCED HEADER ---------- */
+
+.nav {
+  min-height: 82px;
+}
+
+.brand {
+  align-items: center;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .nav {
+    height: 74px;
+    min-height: 74px;
+  }
+
+  .brand {
+    gap: 7px;
+  }
+
+  .brand img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand-title {
+    font-size: 1.58rem;
+    letter-spacing: -0.25px;
+  }
+
+  .brand-bridge {
+    height: 16px;
+    margin-top: 3px;
+  }
+
+  .brand-subtitle {
+    gap: 6px;
+    margin-top: 0;
+    font-size: .43rem;
+    letter-spacing: 1.75px;
+  }
+
+  .brand-subtitle i {
+    width: 18px;
+    height: 1.5px;
+  }
+}
     .links {
       display: flex;
       align-items: center;

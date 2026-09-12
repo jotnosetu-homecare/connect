@@ -2407,7 +2407,49 @@
   visibility: visible !important;
   opacity: 1 !important;
   z-index: 10000 !important;
-}  
+} 
+.service-video {
+  position: relative !important;
+}
+
+.video-mute-btn {
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  z-index: 99999 !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 50% !important;
+  background: rgba(0,0,0,.55) !important;
+  color: #fff !important;
+  font-size: 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+    .video-play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  width: 54px;
+  height: 54px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0,0,0,.55);
+  color: white;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+    
 }    
   
   </style>
@@ -2693,6 +2735,7 @@
     <source src="service-video.mp4" type="video/mp4">  
   </video>
  <button class="video-mute-btn" type="button">🔇</button>
+  <button class="video-play-btn" type="button">▶</button>
 
   <div class="service-video-caption">
     <span>JotnoSetu</span>
@@ -3725,18 +3768,47 @@ window.addEventListener("scroll", function () {
   }
 }, { passive: true });
   
-  </script>
-  <script>
+<script>
 document.querySelectorAll('.service-video').forEach(box => {
-  const video = box.querySelector('video');
-  const btn = box.querySelector('.video-mute-btn');
 
-  btn.addEventListener('click', () => {
+  const video = box.querySelector('video');
+  const muteBtn = box.querySelector('.video-mute-btn');
+  const playBtn = box.querySelector('.video-play-btn');
+
+  if (!video || !muteBtn || !playBtn) return;
+
+  function updateButtons() {
+    muteBtn.textContent = video.muted ? '🔇' : '🔊';
+    playBtn.textContent = video.paused ? '▶' : '⏸';
+  }
+
+  muteBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
     video.muted = !video.muted;
-    btn.textContent = video.muted ? '🔇' : '🔊';
+    updateButtons();
   });
+
+  playBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+
+  video.addEventListener('play', updateButtons);
+  video.addEventListener('pause', updateButtons);
+
+  updateButtons();
+
 });
 </script>
+ 
 
 </body>
 </html>

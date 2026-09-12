@@ -105,42 +105,77 @@
 }
 
 .brand img {
-  width: 54px;
-  height: 54px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
+/* ===== PREMIUM JOTNOSETU LOGO STYLE ===== */
+
 .brand-name {
-  display: block;
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-size: 2rem;
-  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   line-height: 1;
-  letter-spacing: 0;
   white-space: nowrap;
 }
 
-.brand-name .jotno {
+/* Main JotnoSetu word */
+.brand-title {
+  display: block;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: .95;
+}
+
+.brand-title .jotno {
   color: var(--navy);
 }
 
-.brand-name .setu {
+.brand-title .setu {
   color: var(--teal);
 }
 
-.brand-name small {
+/* Bridge / wave */
+.brand-bridge {
   display: block;
-  margin-top: 7px;
+  width: 100%;
+  height: 25px;
+  margin-top: 3px;
+  overflow: visible;
+}
+
+/* Home Healthcare line */
+.brand-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 1px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: .75rem;
+  font-size: .56rem;
   font-weight: 800;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   line-height: 1;
   color: var(--navy);
-  text-align: center;
+}
+
+.brand-subtitle i {
+  display: block;
+  width: 24px;
+  height: 2px;
+  flex-shrink: 0;
+  background: var(--teal);
+  border-radius: 10px;
+}
+
+.brand-subtitle span {
+  display: block;
 }
 
     .links {
@@ -1513,12 +1548,50 @@
   <header>
     <div class="container nav">
 
-      <a class="brand" href="#home">
-        <img src="DP.jpeg" alt="JotnoSetu Logo">
-      <span class="brand-name">
-  <span class="jotno">Jotno</span><span class="setu">Setu</span>
-  <small>Home Health Care</small>
-</span>
+    <a class="brand" href="#home">
+  <img src="DP.jpeg" alt="JotnoSetu Logo">
+
+  <span class="brand-name">
+
+    <span class="brand-title">
+      <span class="jotno">Jotno</span><span class="setu">Setu</span>
+    </span>
+
+    <svg class="brand-bridge" viewBox="0 0 500 75" preserveAspectRatio="none" aria-hidden="true">
+      <!-- Main bridge curve -->
+      <path
+        d="M15 45
+           C105 45 130 43 175 30
+           C215 18 285 18 325 30
+           C370 43 395 45 485 45"
+        fill="none"
+        stroke="var(--navy)"
+        stroke-width="2.5"
+        stroke-linecap="round"
+      />
+
+      <!-- Bridge supports -->
+      <path d="M215 25 V58" stroke="var(--navy)" stroke-width="4" />
+      <path d="M285 25 V58" stroke="var(--navy)" stroke-width="4" />
+
+      <!-- Lower fine line -->
+      <path
+        d="M15 45 H485"
+        fill="none"
+        stroke="var(--navy)"
+        stroke-width="1"
+        opacity=".55"
+      />
+    </svg>
+
+    <span class="brand-subtitle">
+      <i></i>
+      <span>HOME HEALTHCARE</span>
+      <i></i>
+    </span>
+
+  </span>
+</a>
 
       <button class="menu" type="button"
         onclick="document.querySelector('.links').classList.toggle('show')">

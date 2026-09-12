@@ -3824,26 +3824,18 @@ document.addEventListener('DOMContentLoaded', function () {
       muteBtn.textContent = video.muted ? '🔇' : '🔊';
     });
 
-    playBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
+ video.addEventListener('click', function (e) {
+  e.preventDefault();
 
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-      }
-    });
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
 
-    video.addEventListener('click', function (e) {
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-      }
+  showPlayIcon();
+});
 
-      showPlayIcon();
-    });
 
     video.addEventListener('play', function () {
       muteBtn.textContent = video.muted ? '🔇' : '🔊';

@@ -95,13 +95,20 @@
       gap: 20px;
     }
 
-    .brand {
-      display: flex;
+    .brand-name {
+      display: block;
+      font-size: 1.40rem;
       align-items: center;
-      gap: 10px;
       font-weight: 900;
-      color: var(--navy);
       letter-spacing: .3px;
+      line-height: 1.05;
+    }
+
+    .brand-name.jotno {
+      color: var(--navy);
+    }
+    .brand-name.setu {
+      color: var(--teal)
     }
 
     .brand img {
@@ -111,11 +118,13 @@
       border-radius: 50%;
     }
 
-    .brand small {
+    .brand-name small {
       display: block;
+      margin-top: 4px;
       font-size: .62rem;
       letter-spacing: 2px;
-      color: var(--teal);
+      color: var(--navy);
+      font-weight:800;
     }
 
     .links {
@@ -1445,8 +1454,8 @@
 
       <a class="brand" href="#home">
         <img src="DP.jpeg" alt="JotnoSetu Logo">
-        <span>
-          JotnoSetu
+        <span class="brand name">
+          <span class="Jotno">Jotno</span><span class="Setu">Setu</span>
           <small>Home Health Care</small>
         </span>
       </a>

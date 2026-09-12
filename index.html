@@ -3826,7 +3826,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
  video.addEventListener('click', function (e) {
   e.preventDefault();
-
+if (e.target === video) {
   if (video.paused) {
     video.play();
   } else {

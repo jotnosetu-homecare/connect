@@ -2431,27 +2431,51 @@
   cursor: pointer !important;
   pointer-events: auto !important;
 }
-    .video-play-btn {
+  .video-play-btn {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(.85);
   z-index: 99999;
   width: 54px;
   height: 54px;
   border: none;
   border-radius: 50%;
-  background: rgba(0,0,0,.55);
-  color: white;
+  background: rgba(0,0,0,.58);
+  color: #fff;
   font-size: 22px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
 }
-    
-}    
-  
+
+.video-play-btn.show {
+  display: flex;
+  pointer-events: auto;
+  animation: videoIconFade 900ms ease forwards;
+}
+
+@keyframes videoIconFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.85);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.95);
+  }
+}
+     
   </style>
 </head>
 
@@ -3768,43 +3792,70 @@ window.addEventListener("scroll", function () {
   }
 }, { passive: true });
   
-<script>
-document.querySelectorAll('.service-video').forEach(box => {
+document.addEventListener('DOMContentLoaded', function () {
 
-  const video = box.querySelector('video');
-  const muteBtn = box.querySelector('.video-mute-btn');
-  const playBtn = box.querySelector('.video-play-btn');
+  document.querySelectorAll('.service-video').forEach(function (box) {
 
-  if (!video || !muteBtn || !playBtn) return;
+    const video = box.querySelector('video');
+    const muteBtn = box.querySelector('.video-mute-btn');
+    const playBtn = box.querySelector('.video-play-btn');
 
-  function updateButtons() {
-    muteBtn.textContent = video.muted ? '🔇' : '🔊';
-    playBtn.textContent = video.paused ? '▶' : '⏸';
-  }
+    if (!video || !muteBtn || !playBtn) return;
 
-  muteBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
+    function showPlayIcon() {
+      playBtn.textContent = video.paused ? '▶' : '⏸';
 
-    video.muted = !video.muted;
-    updateButtons();
-  });
+      playBtn.classList.remove('show');
 
-  playBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
+      void playBtn.offsetWidth;
 
-    if (video.paused) {
-      video.play();
-    } else {
-      video.pause();
+      playBtn.classList.add('show');
+
+      setTimeout(function () {
+        playBtn.classList.remove('show');
+      }, 900);
     }
+
+    muteBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      video.muted = !video.muted;
+      muteBtn.textContent = video.muted ? '🔇' : '🔊';
+    });
+
+    playBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+
+    video.addEventListener('click', function () {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+
+      showPlayIcon();
+    });
+
+    video.addEventListener('play', function () {
+      muteBtn.textContent = video.muted ? '🔇' : '🔊';
+    });
+
+    video.addEventListener('pause', function () {
+      muteBtn.textContent = video.muted ? '🔇' : '🔊';
+    });
+
+    muteBtn.textContent = video.muted ? '🔇' : '🔊';
+
   });
-
-  video.addEventListener('play', updateButtons);
-  video.addEventListener('pause', updateButtons);
-
-  updateButtons();
 
 });
 </script>

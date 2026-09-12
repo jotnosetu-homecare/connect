@@ -3431,6 +3431,18 @@
       },
       { passive: true }
     );
+    document.addEventListener("click", function (e) {
+  const menu = document.querySelector(".links");
+  const menuButton = document.querySelector(".menu");
+
+  if (
+    menu.classList.contains("show") &&
+    !menu.contains(e.target) &&
+    !menuButton.contains(e.target)
+  ) {
+    menu.classList.remove("show");
+  }
+});
 
   </script>
 

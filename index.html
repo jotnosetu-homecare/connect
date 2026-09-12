@@ -3811,10 +3811,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
       playBtn.classList.add('show');
 
-      setTimeout(function () {
-        playBtn.classList.remove('show');
-      }, 1500);
+       setTimeout(function () {
+    if (!video.paused) {
+      playBtn.classList.remove('show');
     }
+  }, 1900);
+}
 
     muteBtn.addEventListener('click', function (e) {
       e.preventDefault();

@@ -2381,8 +2381,35 @@
   cursor: pointer;
   backdrop-filter: blur(5px);
 }
-    }
-    
+  @media (min-width: 901px) {
+  .service-video video {
+    cursor: pointer;
+  }
+
+  .service-video video::-webkit-media-controls-panel {
+    opacity: 1 !important;
+  }
+
+  .service-video video::-webkit-media-controls-play-button {
+    opacity: 1 !important;
+    display: block !important;
+  }
+
+  .video-volume-control {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 9999 !important;
+}
+
+.video-mute-btn {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10000 !important;
+}  
+}    
+  
   </style>
 </head>
 

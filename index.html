@@ -1975,6 +1975,187 @@
   }
 
 }
+
+    /* =========================================================
+   JOTNOSETU - PHONE ONLY HERO BUTTONS
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .hero-actions {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 7px;
+    margin-top: 20px;
+  }
+
+  .hero-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    height: 46px;
+
+    padding: 0 6px;
+    gap: 5px;
+
+    border-radius: 999px;
+
+    font-size: 0.68rem;
+    font-weight: 750;
+
+    /* 3D tablet effect */
+    box-shadow:
+      0 4px 0 rgba(0,0,0,0.12),
+      0 8px 16px rgba(20,48,72,0.13);
+
+    transform: translateY(0);
+  }
+
+  .hero-btn:active {
+    transform: translateY(3px);
+
+    box-shadow:
+      0 1px 0 rgba(0,0,0,0.12),
+      0 3px 8px rgba(20,48,72,0.12);
+  }
+
+  .hero-btn-icon {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+
+    font-size: 0.65rem;
+  }
+
+  /* Keep all 3 buttons side by side */
+  .hero-book,
+  .hero-how,
+  .hero-call {
+    flex-basis: 0;
+  }
+
+}
+
+    /* =========================================================
+   JOTNOSETU - PHONE ONLY MENU
+   Tablet + Laptop unchanged
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .links.show {
+    position: absolute;
+
+    top: 70px;
+    left: 12px;
+    right: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 8px 12px 13px;
+
+    background: rgba(255,255,255,0.98);
+
+    border: 1px solid rgba(20,48,72,0.10);
+
+    border-radius: 0 0 18px 18px;
+
+    box-shadow:
+      0 14px 30px rgba(20,48,72,0.14);
+
+    z-index: 9999;
+  }
+
+
+  /* Menu items */
+  .links.show > a:not(.btn) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    min-height: 43px;
+
+    padding: 0 7px;
+
+    color: var(--navy);
+
+    font-size: 0.86rem;
+    font-weight: 700;
+
+    border-bottom:
+      1px solid rgba(20,48,72,0.08);
+
+    text-decoration: none;
+  }
+
+
+  /* Small arrow */
+  .links.show > a:not(.btn)::after {
+    content: "›";
+
+    font-size: 1.15rem;
+    line-height: 1;
+
+    opacity: 0.42;
+  }
+
+
+  /* Hover / tap */
+  .links.show > a:not(.btn):hover {
+    color: var(--teal);
+  }
+
+
+  /* Book Care CTA */
+  .links.show > a.btn.primary {
+    width: 100%;
+
+    min-height: 43px;
+
+    margin-top: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+
+    font-size: 0.82rem;
+
+    box-shadow:
+      0 5px 0 rgba(0,0,0,0.10),
+      0 9px 18px rgba(8,125,133,0.20);
+  }
+
+}
+
+    /* Desktop / Laptop / Tablet — 3D effect only */
+@media (min-width: 561px) {
+  .hero-btn {
+    box-shadow:
+      0 4px 0 rgba(20, 48, 72, 0.18),
+      0 8px 16px rgba(20, 48, 72, 0.12);
+  }
+
+  .hero-btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 6px 0 rgba(20, 48, 72, 0.16),
+      0 12px 22px rgba(20, 48, 72, 0.15);
+  }
+
+  .hero-btn:active {
+    transform: translateY(2px);
+    box-shadow:
+      0 2px 0 rgba(20, 48, 72, 0.16),
+      0 4px 9px rgba(20, 48, 72, 0.10);
+  }
+}
     
   </style>
 </head>

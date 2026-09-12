@@ -2362,7 +2362,26 @@
     aspect-ratio: 9 / 16 !important;
     object-fit: cover !important;
   }
+
+ .video-mute-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
 }
+    }
     
   </style>
 </head>
@@ -2644,6 +2663,7 @@
     preload="metadata"
     controls
   >
+   <button class="video-mute-btn" type="button" aria-label="Mute or unmute video">🔇</button> 
     <source src="service-video.mp4" type="video/mp4">
   </video>
 
@@ -3679,6 +3699,17 @@ window.addEventListener("scroll", function () {
 }, { passive: true });
 
   </script>
+  <script>
+document.querySelectorAll('.service-video').forEach(box => {
+  const video = box.querySelector('video');
+  const btn = box.querySelector('.video-mute-btn');
+
+  btn.addEventListener('click', () => {
+    video.muted = !video.muted;
+    btn.textContent = video.muted ? '🔇' : '🔊';
+  });
+});
+</script>
 
 </body>
 </html>

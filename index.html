@@ -3431,11 +3431,12 @@
       },
       { passive: true }
     );
-    document.addEventListener("click", function (e) {
+  document.addEventListener("click", function (e) {
   const menu = document.querySelector(".links");
   const menuButton = document.querySelector(".menu");
 
   if (
+    menu &&
     menu.classList.contains("show") &&
     !menu.contains(e.target) &&
     !menuButton.contains(e.target)
@@ -3443,6 +3444,14 @@
     menu.classList.remove("show");
   }
 });
+
+window.addEventListener("scroll", function () {
+  const menu = document.querySelector(".links");
+
+  if (menu && menu.classList.contains("show")) {
+    menu.classList.remove("show");
+  }
+}, { passive: true });
 
   </script>
 

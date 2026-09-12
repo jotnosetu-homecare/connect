@@ -1441,7 +1441,52 @@
         border-bottom: 0;
       }
     }
-    
+/* ===== PREMIUM JOTNOSETU SHINE ===== */
+
+.brand-name .jotno,
+.brand-name .setu {
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: brandShine 4s ease-in-out infinite;
+}
+
+.brand-name .jotno {
+  background-image: linear-gradient(
+    110deg,
+    var(--navy) 0%,
+    var(--navy) 38%,
+    #ffffff 50%,
+    var(--navy) 62%,
+    var(--navy) 100%
+  );
+}
+
+.brand-name .setu {
+  background-image: linear-gradient(
+    110deg,
+    var(--teal) 0%,
+    var(--teal) 38%,
+    #ffffff 50%,
+    var(--teal) 62%,
+    var(--teal) 100%
+  );
+}
+
+@keyframes brandShine {
+  0% {
+    background-position: 120% 0;
+  }
+
+  45% {
+    background-position: -20% 0;
+  }
+
+  100% {
+    background-position: -20% 0;
+  }
+}
   </style>
 </head>
 
@@ -1469,11 +1514,10 @@
 
       <a class="brand" href="#home">
         <img src="DP.jpeg" alt="JotnoSetu Logo">
-        <span class="brand name">
-          <span class="jotno">Jotno</span><span class="setu">Setu</span>
-          <small>Home Health Care</small>
-        </span>
-      </a>
+      <span class="brand-name">
+  <span class="jotno">Jotno</span><span class="setu">Setu</span>
+  <small>Home Health Care</small>
+</span>
 
       <button class="menu" type="button"
         onclick="document.querySelector('.links').classList.toggle('show')">

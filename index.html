@@ -1740,6 +1740,242 @@
     background-position: -20% 0;
   }
 }
+
+/* =========================================================
+   PREMIUM HERO CTA BUTTONS
+   ========================================================= */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.hero-btn {
+  position: relative;
+  overflow: hidden;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-width: 145px;
+  height: 48px;
+  padding: 0 20px;
+
+  border-radius: 999px;
+  text-decoration: none;
+
+  font-size: 0.91rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Icon */
+.hero-btn-icon {
+  width: 21px;
+  height: 21px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* -------------------------
+   BOOK NOW
+   ------------------------- */
+
+.hero-book {
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #0f9f9a,
+    #087f86
+  );
+
+  border: 1px solid rgba(255,255,255,0.18);
+
+  box-shadow:
+    0 8px 22px rgba(15,159,154,0.24);
+}
+
+.hero-book .hero-btn-icon {
+  background: rgba(255,255,255,0.18);
+}
+
+/* -------------------------
+   HOW IT WORKS
+   ------------------------- */
+
+.hero-how {
+  color: var(--navy);
+
+  background: rgba(255,255,255,0.92);
+
+  border: 1px solid rgba(20,48,72,0.18);
+
+  box-shadow:
+    0 6px 18px rgba(20,48,72,0.07);
+}
+
+.hero-how .hero-btn-icon {
+  color: var(--navy);
+  border: 1px solid rgba(20,48,72,0.25);
+}
+
+/* -------------------------
+   CALL NOW
+   ------------------------- */
+
+.hero-call {
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #173f67,
+    #0c2948
+  );
+
+  border: 1px solid rgba(255,255,255,0.16);
+
+  box-shadow:
+    0 8px 22px rgba(12,41,72,0.25);
+}
+
+.hero-call .hero-btn-icon {
+  background: rgba(255,255,255,0.15);
+}
+
+
+/* =========================================================
+   SUBTLE SHINE EFFECT
+   Book Now + Call Now only
+   ========================================================= */
+
+.hero-book::after,
+.hero-call::after {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: -75%;
+
+  width: 45%;
+  height: 100%;
+
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255,255,255,0.30),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  animation: heroButtonShine 4s ease-in-out infinite;
+}
+
+.hero-call::after {
+  animation-delay: 1.8s;
+}
+
+@keyframes heroButtonShine {
+
+  0% {
+    left: -75%;
+  }
+
+  25% {
+    left: 130%;
+  }
+
+  100% {
+    left: 130%;
+  }
+
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+}
+
+.hero-book:hover {
+  box-shadow:
+    0 12px 28px rgba(15,159,154,0.32);
+}
+
+.hero-how:hover {
+  border-color: rgba(20,48,72,0.35);
+
+  box-shadow:
+    0 9px 22px rgba(20,48,72,0.11);
+}
+
+.hero-call:hover {
+  box-shadow:
+    0 12px 28px rgba(12,41,72,0.34);
+}
+
+.hero-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .hero-actions {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-btn {
+    min-width: 0;
+    flex: 1 1 calc(50% - 5px);
+
+    height: 46px;
+    padding: 0 14px;
+
+    font-size: 0.82rem;
+    gap: 7px;
+  }
+
+  .hero-btn-icon {
+    width: 19px;
+    height: 19px;
+    font-size: 0.72rem;
+  }
+
+  /* Third button gets full width */
+  .hero-call {
+    flex-basis: 100%;
+  }
+
+}
+    
   </style>
 </head>
 
@@ -1883,14 +2119,23 @@
               feel simpler, warmer and more reassuring.
             </p>
 
-        <div class="actions">
-  <a class="btn primary" href="#booking">
-    Request Home Care
+<div class="actions hero-actions">
+
+  <a class="hero-btn hero-book" href="#booking">
+    <span class="hero-btn-icon">▣</span>
+    <span>Book Now</span>
   </a>
 
-  <a class="btn secondary" href="#how">
-    How It Works
+  <a class="hero-btn hero-how" href="#how">
+    <span class="hero-btn-icon">i</span>
+    <span>How It Works</span>
   </a>
+
+  <a class="hero-btn hero-call" href="tel:+918371083186">
+    <span class="hero-btn-icon">☎</span>
+    <span>Call Now</span>
+  </a>
+
 </div>
 
             <div class="trust-row">

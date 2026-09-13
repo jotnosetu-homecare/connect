@@ -2458,45 +2458,55 @@
   }
 
 }
-    }
+
 
 /* MOBILE — SAME EFFECT */
 
-@media (max-width: 560px) {
+/* MOBILE — COMPLETE JOTNOSETU SHINE */
 
-  .brand-name .jotno,
-  .brand-name .setu {
-    display: inline-block;
-    background-size: 260% 100%;
+@media (max-width: 560px) {
+  .brand-title::after {
+    content: "JotnoSetu";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+    z-index: 5;
+
+    font: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    white-space: nowrap;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    background: linear-gradient(
+      110deg,
+      transparent 0%,
+      transparent 38%,
+      rgba(255,255,255,0.05) 43%,
+      rgba(255,255,255,0.95) 50%,
+      rgba(255,255,255,0.05) 57%,
+      transparent 62%,
+      transparent 100%
+    );
+
+    background-size: 250% 100%;
+    background-position: 120% 0;
     background-repeat: no-repeat;
+
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: fullJotnoSetuShine 3.2s linear infinite;
-  }
 
-  .brand-name .jotno {
-    background-image: linear-gradient(
-      105deg,
-      var(--navy) 0%,
-      var(--navy) 40%,
-      rgba(255,255,255,0.95) 50%,
-      var(--navy) 60%,
-      var(--navy) 100%
-    );
+    animation: fullJotnoSetuShine 3.5s linear infinite;
   }
-
-  .brand-name .setu {
-    background-image: linear-gradient(
-      105deg,
-      var(--teal) 0%,
-      var(--teal) 40%,
-      rgba(255,255,255,0.95) 50%,
-      var(--teal) 60%,
-      var(--teal) 100%
-    );
-  }
-
 }
       @media (max-width: 560px) {
 

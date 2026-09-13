@@ -4212,6 +4212,1127 @@ footer {
     animation: none;
   }
 }
+
+    /* =========================================================
+   PROJUKTA — 3D LOVE HEART
+   ========================================================= */
+
+.hero-love-button {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  bottom: auto !important;
+
+  width: 105px;
+  height: 125px;
+
+  transform: translate(-50%, -50%) !important;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+
+  z-index: 100 !important;
+}
+
+.hero-love-icon {
+  width: 68px;
+  height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(145deg, #e47795, #a82f50);
+
+  color: #fff;
+  font-size: 2rem;
+
+  box-shadow:
+    0 8px 0 #84263f,
+    0 15px 25px rgba(137, 39, 65, .25),
+    inset 0 3px 7px rgba(255,255,255,.45);
+
+  animation: loveHeartFloat 3s ease-in-out infinite;
+}
+
+.hero-love-label {
+  margin-top: 9px;
+
+  color: #9b3452;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .16em;
+}
+
+.hero-love-tap {
+  margin-top: 3px;
+
+  color: #a87582;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.hero-love-button:hover .hero-love-icon {
+  transform: scale(1.08);
+}
+
+.hero-love-button:active .hero-love-icon {
+  transform: translateY(5px) scale(.96);
+
+  box-shadow:
+    0 3px 0 #84263f,
+    0 7px 13px rgba(137, 39, 65, .18);
+}
+
+@keyframes loveHeartFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@media (max-width: 560px) {
+
+  .hero-love-button {
+    width: 90px;
+    height: 110px;
+
+    top: 50% !important;
+  }
+
+  .hero-love-icon {
+    width: 58px;
+    height: 58px;
+    font-size: 1.7rem;
+  }
+
+  .hero-love-label {
+    font-size: .65rem;
+  }
+
+  .hero-love-tap {
+    font-size: .56rem;
+  }
+
+}
+
+    /* =========================================================
+   PROJUKTA — OUR LOVE VIDEOS
+   PREMIUM SCRAPBOOK VIDEO INTERFACE
+   ========================================================= */
+
+.love-video-moments {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 20px 110px;
+  background:
+    radial-gradient(circle at 15% 35%,
+      rgba(255, 190, 210, .42),
+      transparent 30%),
+    radial-gradient(circle at 85% 65%,
+      rgba(255, 220, 195, .35),
+      transparent 32%),
+    linear-gradient(180deg, #fff7f8 0%, #ffeef3 100%);
+  text-align: center;
+  isolation: isolate;
+}
+
+/* ---------- HEADING ---------- */
+
+.love-video-heading {
+  position: relative;
+  z-index: 3;
+  max-width: 760px;
+  margin: 0 auto 55px;
+}
+
+.love-heading-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 13px;
+}
+
+.love-heading-line span {
+  width: 90px;
+  height: 1px;
+  background: rgba(183, 55, 88, .35);
+}
+
+.love-heading-line b {
+  color: #b73558;
+  font-size: 1.15rem;
+}
+
+.love-video-heading h2 {
+  margin: 0;
+  color: #a82f50;
+  font-family: Georgia, serif;
+  font-size: clamp(2.7rem, 6vw, 4.7rem);
+  line-height: 1;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -.025em;
+}
+
+.love-video-heading p {
+  margin: 20px 0 0;
+  color: #9a5367;
+  font-size: .98rem;
+  letter-spacing: .03em;
+}
+
+.love-video-heading p span {
+  color: #b73558;
+}
+
+
+/* ---------- VIDEO GRID ---------- */
+
+.love-video-grid {
+  position: relative;
+  z-index: 3;
+
+  width: min(1120px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 38px;
+}
+
+
+/* ---------- VIDEO CARD ---------- */
+
+.love-video-card {
+  position: relative;
+  padding: 20px 20px 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.92),
+      rgba(255,225,233,.78)
+    );
+
+  border: 1px solid rgba(183,55,88,.12);
+  border-radius: 20px;
+
+  box-shadow:
+    0 20px 45px rgba(125,47,70,.13),
+    0 5px 12px rgba(125,47,70,.06);
+
+  transform: rotate(-1deg);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+.love-video-card:nth-child(2) {
+  transform: rotate(1deg);
+}
+
+.love-video-card:hover {
+  transform: translateY(-8px) rotate(0deg);
+
+  box-shadow:
+    0 28px 55px rgba(125,47,70,.18),
+    0 7px 15px rgba(125,47,70,.08);
+}
+
+
+/* ---------- TAPE ---------- */
+
+.love-video-tape {
+  position: absolute;
+  top: -13px;
+
+  width: 105px;
+  height: 32px;
+
+  background: rgba(247,150,177,.65);
+
+  box-shadow:
+    0 3px 8px rgba(130,45,68,.10);
+
+  z-index: 6;
+}
+
+.tape-left {
+  left: 27px;
+  transform: rotate(-8deg);
+}
+
+.tape-right {
+  right: 27px;
+  transform: rotate(8deg);
+}
+
+
+/* ---------- VIDEO FRAME ---------- */
+
+.love-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #24191d;
+  border-radius: 13px;
+
+  box-shadow:
+    0 8px 20px rgba(45,25,32,.18);
+}
+
+.love-video-frame video {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* ---------- CAPTION ---------- */
+
+.love-video-caption {
+  position: relative;
+
+  width: min(300px, 80%);
+  margin: 18px auto 0;
+  padding: 11px 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff8f5,
+      #ffe9ee
+    );
+
+  box-shadow:
+    0 5px 12px rgba(120,50,68,.08);
+
+  transform: rotate(-1deg);
+}
+
+.love-video-card:nth-child(2) .love-video-caption {
+  transform: rotate(1deg);
+}
+
+.love-video-caption span {
+  color: #a33153;
+
+  font-family: Georgia, serif;
+  font-size: 1.18rem;
+  font-style: italic;
+}
+
+
+/* ---------- LITTLE HEARTS ---------- */
+
+.love-card-heart {
+  position: absolute;
+
+  color: #d65d7d;
+  font-size: 1.5rem;
+
+  filter:
+    drop-shadow(0 4px 5px rgba(140,40,65,.15));
+
+  animation: videoHeartFloat 3.5s ease-in-out infinite;
+}
+
+.heart-one {
+  right: 20px;
+  bottom: 70px;
+}
+
+.heart-two {
+  left: 20px;
+  bottom: 70px;
+  animation-delay: 1s;
+}
+
+@keyframes videoHeartFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(8deg);
+  }
+}
+
+
+/* ---------- FOOTER MESSAGE ---------- */
+
+.love-video-footer {
+  position: relative;
+  z-index: 3;
+
+  margin: 65px auto 0;
+}
+
+.love-video-footer .love-heading-line {
+  margin-bottom: 18px;
+}
+
+.love-video-footer p {
+  margin: 0;
+
+  color: #a14d66;
+
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.love-video-footer p span {
+  color: #b73558;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+
+  .love-video-moments {
+    padding: 75px 15px 85px;
+  }
+
+  .love-video-heading {
+    margin-bottom: 42px;
+  }
+
+  .love-video-heading h2 {
+    font-size: 2.8rem;
+  }
+
+  .love-video-heading p {
+    font-size: .86rem;
+  }
+
+  .love-video-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    width: min(500px, 100%);
+  }
+
+  .love-video-card,
+  .love-video-card:nth-child(2) {
+    transform: rotate(0deg);
+  }
+
+  .love-video-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .love-video-frame {
+    aspect-ratio: 16 / 9;
+  }
+
+  .love-video-caption span {
+    font-size: 1.05rem;
+  }
+
+  .love-video-footer {
+    margin-top: 50px;
+  }
+
+  .love-video-footer p {
+    font-size: .95rem;
+  }
+
+}
+
+
+
+    /* =====================================================
+   LOVE VIDEO — HEART PLAY BUTTON
+   ===================================================== */
+
+.love-video-frame {
+  position: relative;
+}
+
+.love-video-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 62px;
+  height: 62px;
+  border: 0;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.88);
+  color: #b73558;
+
+  font-size: 1.45rem;
+  line-height: 1;
+
+  cursor: pointer;
+  z-index: 5;
+
+  box-shadow:
+    0 8px 24px rgba(80, 25, 40, 0.20),
+    inset 0 2px 6px rgba(255,255,255,.95);
+
+  transition:
+    transform .25s ease,
+    opacity .3s ease,
+    box-shadow .25s ease;
+  
+  animation: lovePlayPulse 2.4s ease-in-out infinite;
+}
+
+.love-video-play:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow:
+    0 12px 30px rgba(80, 25, 40, 0.25),
+    inset 0 2px 6px rgba(255,255,255,.95);
+}
+
+.love-video-play:active {
+  transform: translate(-50%, -50%) scale(.94);
+}
+
+.love-video-play.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(.75);
+}
+
+@keyframes lovePlayPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+}
+
+@media (max-width: 560px) {
+  .love-video-play {
+    width: 54px;
+    height: 54px;
+    font-size: 1.25rem;
+  }
+}
+
+    /* =====================================================
+   LOVE VIDEO — PREMIUM SCRAPBOOK FINISH
+   ===================================================== */
+
+.love-video-card {
+  transform: rotate(-1deg) translateY(0);
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+.love-video-card:nth-child(2) {
+  transform: rotate(1deg) translateY(0);
+}
+
+.love-video-card:hover {
+  transform: rotate(-1deg) translateY(-7px);
+  box-shadow:
+    0 24px 50px rgba(90, 35, 55, .16);
+}
+
+.love-video-card:nth-child(2):hover {
+  transform: rotate(1deg) translateY(-7px);
+}
+
+.love-video-frame {
+  border: 3px solid rgba(255,255,255,.75);
+  box-shadow:
+    0 12px 28px rgba(55, 25, 35, .18),
+    inset 0 0 0 1px rgba(255,255,255,.35);
+}
+
+.love-video-caption {
+  position: relative;
+  z-index: 2;
+  padding-top: 14px;
+}
+
+.love-video-caption span {
+  display: inline-block;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #87334d;
+  letter-spacing: .03em;
+}
+
+.love-card-heart {
+  text-shadow:
+    0 4px 12px rgba(140, 40, 70, .18);
+}
+
+@media (max-width: 700px) {
+  .love-video-card:hover,
+  .love-video-card:nth-child(2):hover {
+    transform: none;
+  }
+}
+
+    /* =====================================================
+   LOVE VIDEO — MOBILE POLAROID FINISH
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+  .love-video-moments {
+    padding: 75px 14px 85px;
+  }
+
+  .love-video-grid {
+    gap: 28px;
+  }
+
+  .love-video-card {
+    width: 100%;
+    padding: 14px 14px 20px;
+    border-radius: 17px;
+  }
+
+  .love-video-frame {
+    border-radius: 11px;
+    border-width: 2px;
+  }
+
+  .love-video-caption {
+    padding-top: 11px;
+  }
+
+  .love-video-caption span {
+    font-size: .9rem;
+  }
+
+  .love-card-heart {
+    font-size: 1rem;
+  }
+
+  .love-video-footer {
+    margin-top: 38px;
+  }
+
+}
+
+    /* =====================================================
+   LOVE VIDEO — SCROLL REVEAL
+   ===================================================== */
+
+.love-video-card {
+  opacity: 0;
+  transform: translateY(35px) rotate(-1deg);
+  transition:
+    opacity .8s ease,
+    transform .8s ease,
+    box-shadow .35s ease;
+}
+
+.love-video-card:nth-child(2) {
+  transform: translateY(35px) rotate(1deg);
+}
+
+.love-video-card.video-visible {
+  opacity: 1;
+  transform: translateY(0) rotate(-1deg);
+}
+
+.love-video-card:nth-child(2).video-visible {
+  transform: translateY(0) rotate(1deg);
+}
+
+@media (max-width: 700px) {
+
+  .love-video-card {
+    transform: translateY(25px);
+  }
+
+  .love-video-card:nth-child(2) {
+    transform: translateY(25px);
+  }
+
+  .love-video-card.video-visible,
+  .love-video-card:nth-child(2).video-visible {
+    transform: translateY(0);
+  }
+
+}
+
+    /* =====================================================
+   LOVE VIDEO — SUBTLE FLOATING HEARTS
+   ===================================================== */
+
+.love-video-card::before {
+  content: "♡";
+  position: absolute;
+  top: -18px;
+  left: 8%;
+  font-size: 20px;
+  color: rgba(183,55,88,.28);
+  pointer-events: none;
+  z-index: 4;
+  animation: videoTinyHeart 4s ease-in-out infinite;
+}
+
+.love-video-card::after {
+  content: "✦";
+  position: absolute;
+  right: 8%;
+  bottom: 12%;
+  font-size: 13px;
+  color: rgba(183,55,88,.22);
+  pointer-events: none;
+  z-index: 4;
+  animation: videoTinySparkle 3.5s ease-in-out infinite;
+}
+
+@keyframes videoTinyHeart {
+  0%,100% {
+    transform: translateY(0) rotate(-8deg);
+    opacity: .45;
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(8deg);
+    opacity: .9;
+  }
+}
+
+@keyframes videoTinySparkle {
+  0%,100% {
+    transform: scale(.8) rotate(0deg);
+    opacity: .25;
+  }
+
+  50% {
+    transform: scale(1.15) rotate(20deg);
+    opacity: .8;
+  }
+}
+
+@media (max-width: 700px) {
+  .love-video-card::before {
+    font-size: 17px;
+    top: -14px;
+  }
+
+  .love-video-card::after {
+    font-size: 11px;
+  }
+}
+    /* =====================================================
+   LOVE LETTER — PREMIUM CINEMATIC FINISH
+   ===================================================== */
+
+.love-letter-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(221,93,125,.10), transparent 32%),
+    radial-gradient(circle at 80% 70%, rgba(214,168,91,.08), transparent 30%),
+    linear-gradient(180deg, #fff9f7 0%, #fff5f6 50%, #fffaf8 100%);
+}
+
+.love-letter-section::before {
+  content: "♡";
+  position: absolute;
+  left: 7%;
+  top: 22%;
+  font-size: 42px;
+  color: rgba(183,55,88,.055);
+  animation: letterFloatOne 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.love-letter-section::after {
+  content: "✦";
+  position: absolute;
+  right: 9%;
+  bottom: 20%;
+  font-size: 24px;
+  color: rgba(183,55,88,.08);
+  animation: letterFloatTwo 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.love-letter-heading h2 {
+  color: #6f263e;
+}
+
+.love-letter-heading h2 span {
+  color: #b73558;
+}
+
+.love-envelope-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.love-envelope {
+  filter: drop-shadow(0 18px 30px rgba(90,30,50,.14));
+  transition:
+    filter .35s ease,
+    transform .35s ease;
+}
+
+.love-envelope:hover {
+  filter: drop-shadow(0 24px 38px rgba(90,30,50,.20));
+}
+
+.envelope-hint {
+  color: #9a6170;
+  letter-spacing: .03em;
+}
+
+@keyframes letterFloatOne {
+  0%,100% {
+    transform: translateY(0) rotate(-8deg);
+    opacity: .4;
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(6deg);
+    opacity: .8;
+  }
+}
+
+@keyframes letterFloatTwo {
+  0%,100% {
+    transform: translateY(0) scale(.9);
+    opacity: .3;
+  }
+
+  50% {
+    transform: translateY(-8px) scale(1.1);
+    opacity: .75;
+  }
+}
+
+@media (max-width: 560px) {
+  .love-letter-section::before {
+    left: 4%;
+    font-size: 30px;
+  }
+
+  .love-letter-section::after {
+    right: 5%;
+    font-size: 18px;
+  }
+}
+    /* =====================================================
+   LOVE LETTER — OPEN FOCUS
+   ===================================================== */
+
+.love-envelope-wrap {
+  transition: transform .5s ease;
+}
+
+.love-envelope.open {
+  transform: translateY(-4px);
+}
+
+.love-envelope.open .envelope-seal {
+  transform: translate(-50%, -50%) scale(.82);
+  opacity: .15;
+  transition: .45s ease;
+}
+
+.love-envelope.open .envelope-letter {
+  filter: drop-shadow(0 18px 28px rgba(70,25,40,.16));
+}
+
+.love-envelope.open .letter-paper {
+  box-shadow:
+    0 20px 45px rgba(70,25,40,.16),
+    0 2px 8px rgba(255,255,255,.8) inset;
+}
+
+@media (max-width: 560px) {
+
+  .love-envelope.open {
+    transform: translateY(-2px);
+  }
+
+  .love-envelope.open .letter-paper {
+    box-shadow:
+      0 14px 30px rgba(70,25,40,.14),
+      0 2px 7px rgba(255,255,255,.8) inset;
+  }
+
+}
+
+    /* =====================================================
+   LOVE FINAL — CINEMATIC ENDING
+   ===================================================== */
+
+.love-final {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(183,55,88,.10), transparent 34%),
+    linear-gradient(180deg, #fffaf8 0%, #fff1f4 50%, #fffaf8 100%);
+}
+
+.love-final::before {
+  content: "♡";
+  position: absolute;
+  left: 10%;
+  top: 18%;
+  font-size: 38px;
+  color: rgba(183,55,88,.07);
+  animation: finalHeartFloat 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.love-final::after {
+  content: "♥";
+  position: absolute;
+  right: 10%;
+  bottom: 18%;
+  font-size: 26px;
+  color: rgba(183,55,88,.08);
+  animation: finalHeartFloat 6s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+.love-final-content {
+  position: relative;
+  z-index: 2;
+}
+
+.love-final-kicker {
+  color: #a34b65;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.love-final h2 {
+  color: #65243a;
+}
+
+.love-final h2 span {
+  color: #b73558;
+}
+
+.love-final-text {
+  color: #7d5964;
+}
+
+.love-final-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #b73558, #8f2948);
+  color: #fff;
+  border: 0;
+  box-shadow:
+    0 10px 25px rgba(120,35,60,.22),
+    inset 0 2px 5px rgba(255,255,255,.25);
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.love-final-btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 15px 32px rgba(120,35,60,.28),
+    inset 0 2px 5px rgba(255,255,255,.28);
+}
+
+.love-final-reveal {
+  border: 1px solid rgba(183,55,88,.12);
+  background: rgba(255,255,255,.72);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 18px 45px rgba(90,30,50,.12),
+    inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.love-final-heart {
+  text-shadow: 0 8px 20px rgba(183,55,88,.20);
+}
+
+@keyframes finalHeartFloat {
+  0%,100% {
+    transform: translateY(0) rotate(-7deg);
+    opacity: .35;
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(7deg);
+    opacity: .8;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .love-final::before {
+    left: 4%;
+    font-size: 28px;
+  }
+
+  .love-final::after {
+    right: 5%;
+    font-size: 20px;
+  }
+
+}
+
+    /* =====================================================
+   LOVE FINAL — REVEAL ANIMATION
+   ===================================================== */
+
+.love-final-reveal {
+  opacity: 0;
+  transform: translateY(22px) scale(.97);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.22,.61,.36,1);
+}
+
+.love-final-reveal.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.love-final-reveal .love-final-heart {
+  animation: finalRevealHeart 2.2s ease-in-out infinite;
+}
+
+.love-final-reveal h3,
+.love-final-reveal p,
+.love-final-reveal strong {
+  animation: finalTextReveal .65s ease both;
+}
+
+.love-final-reveal h3 {
+  animation-delay: .15s;
+}
+
+.love-final-reveal p {
+  animation-delay: .3s;
+}
+
+.love-final-reveal strong {
+  animation-delay: .5s;
+}
+
+@keyframes finalRevealHeart {
+  0%,100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes finalTextReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .love-final-reveal,
+  .love-final-reveal .love-final-heart,
+  .love-final-reveal h3,
+  .love-final-reveal p,
+  .love-final-reveal strong {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+    /* =====================================================
+   LOVE MODE — FINAL RESPONSIVE CLEANUP
+   ===================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.love-moments,
+.love-video-moments,
+.love-letter-section,
+.love-final {
+  overflow: hidden;
+}
+
+/* Prevent accidental horizontal scrolling */
+body {
+  overflow-x: hidden;
+}
+
+/* Mobile spacing cleanup */
+@media (max-width: 560px) {
+
+  .love-section-heading,
+  .love-video-heading,
+  .love-letter-heading,
+  .love-final-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .love-video-grid {
+    width: 100%;
+  }
+
+  .love-video-card {
+    min-width: 0;
+  }
+
+  .love-envelope-wrap {
+    max-width: 100%;
+  }
+
+}
+    
     
 </style>
 </head>
@@ -4337,9 +5458,10 @@ footer {
 
       <!-- PROJUKTA — LOVE MOMENTS BUTTON -->
 
-<a href="#our-moments" class="hero-love-button">
+<a href="#our-moments" class="hero-love-button" aria-label="Open our little moments">
   <span class="hero-love-icon">♥</span>
-  <span class="hero-love-text">Our Little Moments</span>
+  <span class="hero-love-label">LOVE</span>
+  <span class="hero-love-tap">Tap Me</span>
 </a>
 
       <div class="container">
@@ -4561,6 +5683,87 @@ footer {
         <h3>Still choosing you. Every single time.</h3>
       </div>
     </article>
+
+  </div>
+
+</section>
+
+    <!-- =====================================================
+     PROJUKTA — OUR LOVE VIDEOS
+     EXTRA ROMANTIC VIDEO SECTION
+     ===================================================== -->
+
+<section class="love-video-moments" id="love-videos">
+
+  <div class="love-video-heading">
+
+    <div class="love-heading-line">
+      <span></span>
+      <b>♥</b>
+      <span></span>
+    </div>
+
+    <h2>Our Little Moments</h2>
+
+    <p>
+      Two little memories, one beautiful story. <span>♥</span>
+    </p>
+
+  </div>
+
+  <div class="love-video-grid">
+
+    <!-- VIDEO 1 -->
+    <article class="love-video-card">
+
+      <div class="love-video-tape tape-left"></div>
+
+    <div class="love-video-frame">
+  <video src="v1.mp4" controls playsinline preload="metadata"></video>
+  <button class="love-video-play" type="button" aria-label="Play video">♥</button>
+</div>
+
+      <div class="love-video-caption">
+        <span>You &amp; Me ♡</span>
+      </div>
+
+      <div class="love-card-heart heart-one">♥</div>
+
+    </article>
+
+
+    <!-- VIDEO 2 -->
+    <article class="love-video-card">
+
+      <div class="love-video-tape tape-right"></div>
+
+     <div class="love-video-frame">
+  <video src="v2.mp4" controls playsinline preload="metadata"></video>
+  <button class="love-video-play" type="button" aria-label="Play video">♥</button>
+</div>
+
+      <div class="love-video-caption">
+        <span>Always Us ♡</span>
+      </div>
+
+      <div class="love-card-heart heart-two">♥</div>
+
+    </article>
+
+  </div>
+
+  <div class="love-video-footer">
+
+    <div class="love-heading-line">
+      <span></span>
+      <b>♥</b>
+      <span></span>
+    </div>
+
+    <p>
+      Same people... different days...<br>
+      still us. <span>♥</span>
+    </p>
 
   </div>
 
@@ -5937,6 +7140,70 @@ document.addEventListener('DOMContentLoaded', function () {
         block: 'center'
       });
     }, 150);
+
+  });
+
+});
+
+    /* =====================================================
+   PROJUKTA — LOVE VIDEOS
+   PART 10C — VIDEO INTERACTION
+   ===================================================== */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  const loveVideos = document.querySelectorAll(
+    '.love-video-moments video'
+  );
+
+  loveVideos.forEach(function (video) {
+
+    video.addEventListener('play', function () {
+
+      loveVideos.forEach(function (otherVideo) {
+
+        if (otherVideo !== video) {
+          otherVideo.pause();
+        }
+
+      });
+
+    });
+
+  });
+
+});
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+  document.querySelectorAll('.love-video-card').forEach(function (card) {
+
+    const video = card.querySelector('video');
+    const playBtn = card.querySelector('.love-video-play');
+
+    if (!video || !playBtn) return;
+
+    // Heart button click → play
+    playBtn.addEventListener('click', function () {
+      video.play();
+    });
+
+    // Video starts → heart disappears
+    video.addEventListener('play', function () {
+      playBtn.classList.add('hidden');
+    });
+
+    // Video pauses → heart comes back
+    video.addEventListener('pause', function () {
+      if (!video.ended) {
+        playBtn.classList.remove('hidden');
+      }
+    });
+
+    // Video ends → heart comes back
+    video.addEventListener('ended', function () {
+      playBtn.classList.remove('hidden');
+    });
 
   });
 

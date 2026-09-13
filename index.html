@@ -1707,7 +1707,10 @@
 
       .stat {
         border-right: 0;
-        border-bottom: 1px sol/* =========================================================
+        border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+          
+/* =========================================================
    BANNER CTA BUTTONS
    Only affects the two buttons under the banner
    ========================================================= */
@@ -3748,7 +3751,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function showPauseIcon() {
       clearTimeout(iconTimer);
 
-      playBtn.textContent = '⏸';
+      playBtn.textContent = '▶';
       playBtn.classList.remove('show', 'persistent');
 
       void playBtn.offsetWidth;
@@ -3759,7 +3762,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function showPlayIcon() {
       clearTimeout(iconTimer);
 
-      playBtn.textContent = '▶';
+      playBtn.textContent = '⏸';
       playBtn.classList.remove('show', 'persistent');
 
       void playBtn.offsetWidth;

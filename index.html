@@ -3647,7 +3647,320 @@ section:not(.love-moments)::after {
 }
 .love-envelope.open + .envelope-hint {
   opacity: 0;
-}    
+} 
+
+    /* LOVE LETTER — FULL TEXT FIX */
+
+.letter-paper {
+  padding: 22px 26px;
+}
+
+.letter-content {
+  font-size: .68rem;
+  line-height: 1.38;
+}
+
+.letter-content p {
+  margin-bottom: 7px;
+}
+
+@media (max-width: 560px) {
+
+  .letter-paper {
+    padding: 14px 16px;
+  }
+
+  .letter-content {
+    font-size: .50rem;
+    line-height: 1.28;
+  }
+
+  .letter-content p {
+    margin-bottom: 4px;
+  }
+
+  .letter-paper h3 {
+    margin: 4px 0 7px;
+  }
+
+  .letter-signature {
+    margin-top: 4px;
+  }
+}
+
+/* =========================================================
+   PROJUKTA — ONE LAST THING
+   PART 5B — FINAL REVEAL DESIGN
+   ========================================================= */
+
+.love-final {
+  position: relative;
+  overflow: hidden;
+  padding: 110px 20px 120px;
+  background:
+    radial-gradient(circle at 50% 35%,
+      rgba(255, 205, 220, .45),
+      transparent 35%),
+    linear-gradient(180deg, #fff7f8 0%, #fffaf7 100%);
+  text-align: center;
+  isolation: isolate;
+}
+
+.love-final-content {
+  position: relative;
+  z-index: 2;
+  width: min(720px, 100%);
+  margin: 0 auto;
+}
+
+.love-final-kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #b73558;
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.love-final h2 {
+  margin: 0;
+  color: #173b62;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1.12;
+  font-weight: 850;
+  letter-spacing: -.04em;
+}
+
+.love-final h2 span {
+  display: block;
+  color: #b73558;
+}
+
+.love-final-text {
+  max-width: 610px;
+  margin: 25px auto 32px;
+  color: #69636a;
+  font-size: .98rem;
+  line-height: 1.8;
+}
+
+.love-final-btn {
+  min-height: 54px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #b73558, #d05b79);
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow:
+    0 5px 0 rgba(112, 34, 57, .16),
+    0 14px 30px rgba(170, 55, 87, .22);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.love-final-btn span {
+  margin-left: 7px;
+}
+
+.love-final-btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 7px 0 rgba(112, 34, 57, .13),
+    0 18px 34px rgba(170, 55, 87, .25);
+}
+
+.love-final-reveal {
+  max-width: 600px;
+  margin: 38px auto 0;
+  padding: 35px 32px;
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(183,55,88,.13);
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(100,45,65,.10);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(25px) scale(.97);
+  transition:
+    opacity .8s ease,
+    transform .8s ease,
+    visibility .8s ease;
+}
+
+.love-final-reveal.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.love-final-heart {
+  margin-bottom: 12px;
+  color: #b73558;
+  font-size: 2.2rem;
+  animation: finalHeartBeat 2s ease-in-out infinite;
+}
+
+.love-final-reveal h3 {
+  margin: 0 0 18px;
+  color: #8f304f;
+  font-family: Georgia, serif;
+  font-size: 1.7rem;
+}
+
+.love-final-reveal p {
+  margin: 0 0 13px;
+  color: #625c61;
+  font-family: Georgia, serif;
+  font-size: .88rem;
+  line-height: 1.7;
+}
+
+.love-final-reveal strong {
+  display: block;
+  margin-top: 20px;
+  color: #a33153;
+  font-family: Georgia, serif;
+  font-size: .92rem;
+  line-height: 1.6;
+}
+
+@keyframes finalHeartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.12);
+  }
+  30% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 560px) {
+
+  .love-final {
+    padding: 75px 16px 85px;
+  }
+
+  .love-final h2 {
+    font-size: 2.15rem;
+  }
+
+  .love-final-text {
+    font-size: .87rem;
+    line-height: 1.7;
+  }
+
+  .love-final-btn {
+    width: min(100%, 310px);
+    min-height: 51px;
+    padding: 0 18px;
+    font-size: .82rem;
+  }
+
+  .love-final-reveal {
+    margin-top: 30px;
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+
+  .love-final-reveal h3 {
+    font-size: 1.4rem;
+  }
+
+  .love-final-reveal p {
+    font-size: .78rem;
+    line-height: 1.6;
+  }
+
+  .love-final-reveal strong {
+    font-size: .82rem;
+  }
+}
+
+    /* =========================================================
+   PROJUKTA — FINAL ROMANTIC ATMOSPHERE
+   PART 6
+   ========================================================= */
+
+body {
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 220, 229, .28),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #fffaf8 0%,
+      #fff7f8 45%,
+      #fffaf7 100%
+    ) !important;
+}
+
+/* Soft romantic glow behind the page */
+body::after {
+  content: "";
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(211, 70, 105, .045),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Small decorative hearts */
+section:not(.love-moments):not(.love-letter-section):not(.love-final)::before {
+  content: "♡";
+  position: absolute;
+  left: 4%;
+  top: 22px;
+  color: rgba(183, 55, 88, .07);
+  font-size: 28px;
+  pointer-events: none;
+  animation: softHeartFloat 6s ease-in-out infinite;
+}
+
+/* Gentle movement */
+@keyframes softHeartFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+/* Keep content above decorative effects */
+header,
+main,
+section,
+footer {
+  position: relative;
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+
+  section:not(.love-moments):not(.love-letter-section):not(.love-final)::before {
+    left: 3%;
+    top: 15px;
+    font-size: 21px;
+  }
+
+}
       
 </style>
 </head>
@@ -4084,7 +4397,62 @@ section:not(.love-moments)::after {
 
   </div>
 
-</section>   
+</section> 
+
+
+    <!-- =====================================================
+     PROJUKTA — ONE LAST THING
+     TEMPORARY LOVE SECTION
+     ===================================================== -->
+
+<section class="love-final" id="one-last-thing">
+
+  <div class="love-final-content">
+
+    <span class="love-final-kicker">One last thing...</span>
+
+    <h2>
+      If I could ask for just one thing,
+      <span>it would be you.</span>
+    </h2>
+
+    <p class="love-final-text">
+      Not a perfect story. Not a perfect relationship.
+      Just something real — something worth choosing,
+      understanding, protecting, and growing together.
+    </p>
+
+    <button class="love-final-btn" id="loveFinalBtn" type="button">
+      There’s something I want to tell you <span>♡</span>
+    </button>
+
+    <div class="love-final-reveal" id="loveFinalReveal">
+
+      <div class="love-final-heart">♥</div>
+
+      <h3>Projukta, stay with me. ❤️</h3>
+
+      <p>
+        Whatever comes next, I don't want to look back and wonder
+        what would have happened if we had just held on a little tighter.
+      </p>
+
+      <p>
+        I want to keep making memories with you —
+        the beautiful ones, the silly ones,
+        and even the difficult ones that teach us how to love better.
+      </p>
+
+      <strong>
+        I choose you. And I hope, every day,
+        we keep choosing each other.
+      </strong>
+
+    </div>
+
+  </div>
+
+</section>
     <!-- =====================================================
          SERVICES
          ===================================================== -->
@@ -5282,6 +5650,35 @@ document.addEventListener('DOMContentLoaded', function () {
     if (hint) {
       hint.textContent = 'A letter, from my heart to yours ♡';
     }
+
+  });
+
+});
+
+    /* =====================================================
+   PROJUKTA — ONE LAST THING REVEAL
+   PART 5C
+   ===================================================== */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  const finalBtn = document.getElementById('loveFinalBtn');
+  const finalReveal = document.getElementById('loveFinalReveal');
+
+  if (!finalBtn || !finalReveal) return;
+
+  finalBtn.addEventListener('click', function () {
+
+    finalReveal.classList.add('show');
+
+    finalBtn.textContent = 'For you, always ♥';
+
+    setTimeout(function () {
+      finalReveal.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }, 150);
 
   });
 

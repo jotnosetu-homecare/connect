@@ -2345,7 +2345,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scale(.85);
-  z-index: 100;
+  z-index: 10;
   width: 54px;
   height: 54px;
   border: none;
@@ -2471,8 +2471,13 @@
   }
 
   .brand-title::after {
+    content: "";
     display: block;
 
+    position: absolute;
+    top: 0;
+    left: 0;
+    
     width: 100%;
     height: 100%;
 
@@ -2480,6 +2485,7 @@
     background-position: 120% 0;
 
     animation: fullJotnoSetuShine 3.5s linear infinite;
+    pointer-events: none;
   }
 
 }

@@ -2372,77 +2372,117 @@
   animation: none;
 }
 
-/* ===== PREMIUM JOTNOSETU SHINE ===== */
+      /* =========================================================
+   JOTNOSETU — SMOOTH FULL BRAND SHINE
+   ========================================================= */
+
+.brand-title {
+  display: inline-block;
+  position: relative;
+
+  /* Original brand colours + moving shine */
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+
+  background-image:
+    /* Base brand colour */
+    linear-gradient(
+      110deg,
+      var(--navy) 0%,
+      var(--navy) 48%,
+      var(--teal) 52%,
+      var(--teal) 100%
+    ),
+
+    /* Moving shine */
+    linear-gradient(
+      110deg,
+      transparent 0%,
+      transparent 43%,
+      rgba(255,255,255,0.0) 46%,
+      rgba(255,255,255,0.95) 50%,
+      rgba(255,255,255,0.0) 54%,
+      transparent 57%,
+      transparent 100%
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  background-repeat: no-repeat;
+
+  /* First = fixed colour, second = moving shine */
+  background-size: 100% 100%, 250% 100%;
+
+  background-position: 0 0, 120% 0;
+
+  animation: jotnoSetuFullShine 4s ease-in-out infinite;
+}
+
+
+/* IMPORTANT:
+   Individual Jotno / Setu spans must NOT animate separately
+*/
 
 .brand-title .jotno,
 .brand-title .setu {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-
-  /* Original brand colours */
-  -webkit-text-fill-color: initial;
-  color: inherit;
-}
-
-/* JOTNO */
-.brand-title .jotno {
-  color: var(--navy);
-}
-
-/* SETU */
-.brand-title .setu {
-  color: var(--teal);
+  color: inherit !important;
+  -webkit-text-fill-color: transparent !important;
+  background: none !important;
+  animation: none !important;
 }
 
 
-/* Moving premium shine */
-.brand-title .jotno::after,
-.brand-title .setu::after {
-  content: "";
-  position: absolute;
+/* Smooth shine across the COMPLETE JOTNOSETU */
 
-  top: -30%;
-  left: -80%;
-
-  width: 45%;
-  height: 160%;
-
-  background: linear-gradient(
-    110deg,
-    transparent 0%,
-    transparent 35%,
-    rgba(255,255,255,.85) 50%,
-    transparent 65%,
-    transparent 100%
-  );
-
-  transform: skewX(-20deg);
-
-  animation: jotnoSetuShine 4s ease-in-out infinite;
-
-  pointer-events: none;
-}
-
-
-/* Slight delay for SETU */
-.brand-title .setu::after {
-  animation-delay: .8s;
-}
-
-
-@keyframes jotnoSetuShine {
+@keyframes jotnoSetuFullShine {
 
   0% {
-    left: -80%;
+    background-position:
+      0 0,
+      120% 0;
   }
 
-  35% {
-    left: 140%;
+  45% {
+    background-position:
+      0 0,
+      -20% 0;
   }
 
   100% {
-    left: 140%;
+    background-position:
+      0 0,
+      -20% 0;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE — KEEP SAME SMOOTH ANIMATION
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .brand-title {
+    display: inline-block;
+
+    background-size:
+      100% 100%,
+      250% 100%;
+
+    background-position:
+      0 0,
+      120% 0;
+
+    animation:
+      jotnoSetuFullShine 4s ease-in-out infinite;
+  }
+
+  .brand-title .jotno,
+  .brand-title .setu {
+    animation: none !important;
+    background: none !important;
   }
 
 }

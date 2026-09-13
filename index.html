@@ -1821,6 +1821,51 @@
   100% {
     background-position: -20% 0;
   }
+}/* ===== PREMIUM JOTNOSETU SHINE ===== */
+
+.brand-name .jotno,
+.brand-name .setu {
+  display: inline-block;
+  position: relative;
+  color: inherit;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.brand-name .jotno::after,
+.brand-name .setu::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 42%,
+    rgba(255,255,255,0.95) 50%,
+    transparent 58%,
+    transparent 100%
+  );
+
+  background-size: 250% 100%;
+  background-repeat: no-repeat;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: brandShine 3.5s linear infinite;
+}
+
+@keyframes brandShine {
+  0% {
+    background-position: 150% 0;
+  }
+
+  100% {
+    background-position: -50% 0;
+  }
 }
 
 /* =========================================================

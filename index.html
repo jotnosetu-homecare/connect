@@ -5332,6 +5332,41 @@ body {
   }
 
 }
+    /* =====================================================
+   FIX — LOVE VIDEO CARDS MUST ALWAYS REMAIN VISIBLE
+   ===================================================== */
+
+.love-video-card {
+  opacity: 1 !important;
+}
+
+    /* =====================================================
+   FIX — HERO LOVE BUTTON POSITION
+   ===================================================== */
+
+.hero-love-button {
+  left: 50% !important;
+  top: 12px !important;
+  bottom: auto !important;
+
+  transform: translateX(-50%) !important;
+  z-index: 100 !important;
+}
+
+.hero-love-button:hover {
+  transform: translateX(-50%) scale(1.03) !important;
+}
+
+@media (max-width: 560px) {
+  .hero-love-button {
+    top: 8px !important;
+    transform: translateX(-50%) scale(.88) !important;
+  }
+
+  .hero-love-button:hover {
+    transform: translateX(-50%) scale(.91) !important;
+  }
+}
     
     
 </style>
@@ -5695,21 +5730,11 @@ body {
 
 <section class="love-video-moments" id="love-videos">
 
-  <div class="love-video-heading">
-
-    <div class="love-heading-line">
-      <span></span>
-      <b>♥</b>
-      <span></span>
-    </div>
-
-    <h2>Our Little Moments</h2>
-
-    <p>
-      Two little memories, one beautiful story. <span>♥</span>
-    </p>
-
-  </div>
+<div class="love-video-heading">
+  <div class="love-heading-line"><span></span><b>♥</b><span></span></div>
+  <h2>Moments We Keep</h2>
+  <p>Little memories, captured just the way they happened. <span>♥</span></p>
+</div>
 
   <div class="love-video-grid">
 

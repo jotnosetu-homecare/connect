@@ -2780,7 +2780,874 @@
     width: min(100%, 280px);
     min-height: 50px;
   }
-}  
+} 
+
+    /* =========================================================
+   PROJUKTA — OUR LITTLE MOMENTS
+   PREMIUM LOVE THEME — TEMPORARY
+   ========================================================= */
+
+.love-moments {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 20px 100px;
+
+  background:
+    radial-gradient(circle at 15% 20%,
+      rgba(255, 210, 222, 0.38),
+      transparent 28%),
+    radial-gradient(circle at 85% 80%,
+      rgba(255, 224, 190, 0.28),
+      transparent 30%),
+    linear-gradient(180deg, #fffaf8 0%, #fff3f5 100%);
+
+  isolation: isolate;
+}
+
+.love-moments::before {
+  content: "♡";
+  position: absolute;
+  top: 35px;
+  left: 7%;
+  color: rgba(183, 55, 88, 0.08);
+  font-size: 6rem;
+  transform: rotate(-15deg);
+  animation: floatingLove 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.love-moments::after {
+  content: "♡";
+  position: absolute;
+  right: 8%;
+  bottom: 45px;
+  color: rgba(183, 55, 88, 0.07);
+  font-size: 5rem;
+  transform: rotate(15deg);
+  animation: floatingLove 6s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+
+/* ---------- HEADING ---------- */
+
+.love-section-heading {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.love-kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+
+  color: #b73558;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.love-section-heading h2 {
+  margin: 0;
+
+  color: #173b62;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  font-weight: 850;
+  letter-spacing: -0.035em;
+}
+
+.love-section-heading h2 span {
+  display: inline-block;
+  margin-left: 5px;
+  color: #b73558;
+  animation: softHeart 2.4s ease-in-out infinite;
+}
+
+.love-section-heading p {
+  max-width: 520px;
+  margin: 16px auto 0;
+
+  color: #74747c;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+
+/* ---------- PHOTO GRID ---------- */
+
+.love-photo-grid {
+  position: relative;
+  z-index: 2;
+
+  width: min(1080px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+
+/* ---------- PHOTO CARD ---------- */
+
+.love-photo-card {
+  overflow: hidden;
+
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(183,55,88,0.10);
+  border-radius: 24px;
+
+  box-shadow:
+    0 12px 35px rgba(94, 55, 70, 0.09),
+    0 2px 5px rgba(94, 55, 70, 0.04);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+.love-photo-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 20px 45px rgba(94, 55, 70, 0.14),
+    0 4px 10px rgba(94, 55, 70, 0.05);
+}
+
+
+/* ---------- IMAGE ---------- */
+
+.love-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+
+  background: #f7e8eb;
+}
+
+.love-photo::after {
+  content: "♡";
+  position: absolute;
+  right: 16px;
+  top: 13px;
+
+  color: rgba(255,255,255,0.92);
+  font-size: 1.5rem;
+
+  text-shadow:
+    0 2px 8px rgba(0,0,0,0.22);
+
+  opacity: 0;
+  transform: scale(.7);
+
+  transition:
+    opacity .35s ease,
+    transform .35s ease;
+}
+
+.love-photo-card:hover .love-photo::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.love-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform .6s ease,
+    filter .6s ease;
+}
+
+.love-photo-card:hover .love-photo img {
+  transform: scale(1.045);
+}
+
+
+/* ---------- CAPTION ---------- */
+
+.love-photo-text {
+  padding: 18px 20px 21px;
+}
+
+.love-photo-text span {
+  display: block;
+  margin-bottom: 6px;
+
+  color: #b73558;
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.love-photo-text h3 {
+  margin: 0;
+
+  color: #243b55;
+  font-size: 1rem;
+  line-height: 1.45;
+  font-weight: 750;
+}
+
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes softHeart {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.13);
+  }
+}
+
+@keyframes floatingLove {
+  0%, 100% {
+    transform: translateY(0) rotate(-15deg);
+  }
+
+  50% {
+    transform: translateY(-13px) rotate(-8deg);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .love-moments {
+    padding: 65px 15px 75px;
+  }
+
+  .love-section-heading {
+    margin-bottom: 32px;
+  }
+
+  .love-section-heading h2 {
+    font-size: 2rem;
+  }
+
+  .love-section-heading p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+
+  .love-photo-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .love-photo-card {
+    border-radius: 20px;
+  }
+
+  .love-photo {
+    aspect-ratio: 4 / 3;
+  }
+
+  .love-photo-text {
+    padding: 15px 17px 18px;
+  }
+
+  .love-photo-text h3 {
+    font-size: 0.94rem;
+  }
+
+  .love-moments::before {
+    top: 25px;
+    left: -8px;
+    font-size: 4rem;
+  }
+
+  .love-moments::after {
+    right: -8px;
+    bottom: 25px;
+    font-size: 4rem;
+  }
+}
+
+    /* =========================================================
+   PROJUKTA LOVE MODE — FULL PAGE THEME
+   TEMPORARY
+   ========================================================= */
+
+body {
+  background:
+    linear-gradient(
+      180deg,
+      #fffaf8 0%,
+      #fff7f8 38%,
+      #fffaf7 70%,
+      #fff 100%
+    ) !important;
+}
+
+
+/* ---------- SUBTLE LOVE ATMOSPHERE ---------- */
+
+body::before {
+  content: "♡  ♥  ♡  ♥  ♡";
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  color: rgba(183, 55, 88, 0.055);
+  font-size: 22px;
+  letter-spacing: 14vw;
+
+  pointer-events: none;
+
+  animation: pageLoveFloat 12s ease-in-out infinite;
+}
+
+
+/* ---------- ROMANTIC SECTION TRANSITIONS ---------- */
+
+section {
+  position: relative;
+}
+
+section:not(.love-moments)::after {
+  content: "♡";
+  position: absolute;
+
+  right: 5%;
+  bottom: 18px;
+
+  color: rgba(183, 55, 88, 0.055);
+  font-size: 32px;
+
+  pointer-events: none;
+
+  animation: tinyLoveFloat 5s ease-in-out infinite;
+}
+
+
+/* ---------- HERO LOVE ACCENT ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "♡";
+  position: absolute;
+
+  right: 7%;
+  top: 18%;
+
+  color: rgba(183, 55, 88, 0.10);
+  font-size: 52px;
+
+  pointer-events: none;
+
+  animation: tinyLoveFloat 4s ease-in-out infinite;
+}
+
+
+/* ---------- BUTTON ROMANTIC ACCENT ---------- */
+
+.hero-btn {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    filter .25s ease;
+}
+
+.hero-btn:hover {
+  filter: saturate(1.08);
+}
+
+
+/* ---------- PAGE ANIMATIONS ---------- */
+
+@keyframes pageLoveFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes tinyLoveFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(5deg);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  body::before {
+    content: "♡   ♥   ♡";
+    font-size: 17px;
+    letter-spacing: 17vw;
+    opacity: .8;
+  }
+
+  section:not(.love-moments)::after {
+    right: 4%;
+    bottom: 12px;
+    font-size: 24px;
+  }
+
+  .hero::after {
+    right: 5%;
+    top: 12%;
+    font-size: 34px;
+  }
+}
+
+    /* =========================================================
+   PROJUKTA — SEALED LOVE LETTER
+   PART 4B — ENVELOPE DESIGN
+   ========================================================= */
+
+.love-letter-section {
+  position: relative;
+  overflow: hidden;
+  padding: 95px 20px 105px;
+  background:
+    radial-gradient(circle at 50% 45%,
+      rgba(255, 215, 226, .45),
+      transparent 34%),
+    linear-gradient(180deg, #fff8f7 0%, #fff0f4 100%);
+  text-align: center;
+  isolation: isolate;
+}
+
+.love-letter-heading {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+
+.love-letter-heading > span {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #b73558;
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.love-letter-heading h2 {
+  margin: 0;
+  color: #173b62;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  font-weight: 850;
+  letter-spacing: -.035em;
+}
+
+.love-letter-heading h2 span {
+  color: #b73558;
+}
+
+.love-letter-heading p {
+  margin: 15px 0 0;
+  color: #77717a;
+  font-size: .95rem;
+}
+
+
+/* ---------- ENVELOPE AREA ---------- */
+
+.love-envelope-wrap {
+  position: relative;
+  z-index: 3;
+  width: min(620px, 100%);
+  margin: 0 auto;
+}
+
+.love-envelope {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: 350px;
+  margin: 0 auto;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+
+  perspective: 1200px;
+}
+
+
+/* ---------- ENVELOPE BACK ---------- */
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(145deg, #fffdfb, #f7dfe5);
+
+  border: 1px solid rgba(160, 64, 88, .15);
+  border-radius: 10px;
+
+  box-shadow:
+    0 20px 45px rgba(102, 47, 66, .16),
+    0 4px 10px rgba(102, 47, 66, .06);
+
+  z-index: 1;
+}
+
+
+/* ---------- LETTER ---------- */
+
+.envelope-letter {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  bottom: 6%;
+
+  height: 88%;
+
+  padding: 8px;
+
+  z-index: 2;
+
+  transition:
+    transform 1s cubic-bezier(.22,.8,.25,1),
+    z-index 0s linear 1s;
+}
+
+.letter-paper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  padding: 25px 28px;
+
+  background:
+    linear-gradient(135deg, #fffefb, #fff9f3);
+
+  border-radius: 6px;
+
+  box-shadow:
+    0 7px 18px rgba(70, 42, 50, .10);
+
+  text-align: left;
+}
+
+.letter-small {
+  color: #b76a7d;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.letter-paper h3 {
+  margin: 8px 0 15px;
+  color: #8f304f;
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.letter-content {
+  color: #625c61;
+  font-family: Georgia, serif;
+  font-size: .73rem;
+  line-height: 1.5;
+}
+
+.letter-content p {
+  margin: 0 0 9px;
+}
+
+.letter-content strong {
+  color: #a33153;
+}
+
+.letter-heart-line {
+  color: #8f304f;
+  font-weight: 600;
+}
+
+.letter-signature {
+  margin-top: 10px;
+  text-align: right;
+  color: #8b747b;
+  font-family: Georgia, serif;
+  font-size: .68rem;
+}
+
+.letter-signature strong {
+  display: block;
+  margin-top: 2px;
+  color: #a33153;
+  font-size: .82rem;
+}
+
+
+/* ---------- ENVELOPE FRONT ---------- */
+
+.envelope-front {
+  position: absolute;
+  inset: 0;
+
+  z-index: 4;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8dce3 0%,
+      #f4ccd7 100%
+    );
+
+  clip-path: polygon(
+    0 35%,
+    50% 72%,
+    100% 35%,
+    100% 100%,
+    0 100%
+  );
+
+  border-radius: 0 0 10px 10px;
+
+  pointer-events: none;
+}
+
+
+/* ---------- FLAP ---------- */
+
+.envelope-flap {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 70%;
+
+  z-index: 5;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f9e1e7,
+      #efc4cf
+    );
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 100%
+  );
+
+  transform-origin: top center;
+
+  transition:
+    transform 1s cubic-bezier(.22,.8,.25,1);
+
+  backface-visibility: hidden;
+
+  pointer-events: none;
+}
+
+
+/* ---------- HEART SEAL ---------- */
+
+.envelope-seal {
+  position: absolute;
+  left: 50%;
+  top: 49%;
+
+  width: 62px;
+  height: 62px;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle at 35% 30%,
+      #d96887,
+      #a82f50 70%);
+
+  color: #fff;
+  font-size: 1.35rem;
+
+  border: 4px solid rgba(255,255,255,.7);
+
+  box-shadow:
+    0 7px 18px rgba(137, 39, 65, .25);
+
+  transition:
+    transform .5s ease,
+    opacity .5s ease;
+}
+
+
+/* ---------- HINT ---------- */
+
+.envelope-hint {
+  margin: 20px 0 0;
+
+  color: #9a6070;
+  font-size: .78rem;
+  font-weight: 750;
+  letter-spacing: .04em;
+
+  animation: envelopeHint 2.5s ease-in-out infinite;
+}
+
+@keyframes envelopeHint {
+  0%, 100% {
+    opacity: .55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   OPEN STATE
+   ========================================================= */
+
+.love-envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.love-envelope.open .envelope-letter {
+  transform: translateY(-135px);
+  z-index: 6;
+}
+
+.love-envelope.open .envelope-seal {
+  transform: translate(-50%, -50%) scale(.6);
+  opacity: 0;
+}
+
+.love-envelope.open .envelope-hint {
+  opacity: 0;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .love-letter-section {
+    padding: 70px 15px 80px;
+  }
+
+  .love-letter-heading {
+    margin-bottom: 35px;
+  }
+
+  .love-letter-heading h2 {
+    font-size: 1.9rem;
+  }
+
+  .love-letter-heading p {
+    font-size: .86rem;
+  }
+
+  .love-envelope {
+    height: 250px;
+  }
+
+  .envelope-letter {
+    left: 6%;
+    right: 6%;
+    bottom: 5%;
+    height: 88%;
+  }
+
+  .letter-paper {
+    padding: 17px 18px;
+  }
+
+  .letter-small {
+    font-size: .52rem;
+  }
+
+  .letter-paper h3 {
+    margin: 5px 0 9px;
+    font-size: 1.05rem;
+  }
+
+  .letter-content {
+    font-size: .56rem;
+    line-height: 1.38;
+  }
+
+  .letter-content p {
+    margin-bottom: 5px;
+  }
+
+  .letter-signature {
+    margin-top: 6px;
+    font-size: .52rem;
+  }
+
+  .letter-signature strong {
+    font-size: .64rem;
+  }
+
+  .envelope-seal {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+    border-width: 3px;
+  }
+
+  .love-envelope.open .envelope-letter {
+    transform: translateY(-105px);
+  }
+
+  .envelope-hint {
+    font-size: .7rem;
+  }
+}
+.love-envelope.open + .envelope-hint {
+  opacity: 0;
+}    
       
 </style>
 </head>
@@ -3053,7 +3920,171 @@
 
     </section>
 
+<!-- =====================================================
+     PROJUKTA — OUR LITTLE MOMENTS
+     TEMPORARY LOVE SECTION
+     ===================================================== -->
 
+<section class="love-moments" id="our-moments">
+
+  <div class="love-section-heading">
+    <span class="love-kicker">A little piece of us</span>
+
+    <h2>Our Little Moments <span>♡</span></h2>
+
+    <p>
+      Some moments are small, but somehow they stay with us forever.
+    </p>
+  </div>
+
+
+  <div class="love-photo-grid">
+
+    <!-- Projukta -->
+    <article class="love-photo-card">
+      <div class="love-photo">
+        <img src="p1.jpg" alt="Projukta">
+      </div>
+
+      <div class="love-photo-text">
+        <span>Her</span>
+        <h3>The smile I never get tired of.</h3>
+      </div>
+    </article>
+
+
+    <!-- Our Moment 1 -->
+    <article class="love-photo-card">
+      <div class="love-photo">
+        <img src="p2.jpg" alt="Our moment">
+      </div>
+
+      <div class="love-photo-text">
+        <span>Us</span>
+        <h3>One moment, a thousand feelings.</h3>
+      </div>
+    </article>
+
+
+    <!-- Our Moment 2 -->
+    <article class="love-photo-card">
+      <div class="love-photo">
+        <img src="p3.jpg" alt="Our moment">
+      </div>
+
+      <div class="love-photo-text">
+        <span>A memory</span>
+        <h3>A moment I would choose all over again.</h3>
+      </div>
+    </article>
+
+
+    <!-- Your photo -->
+    <article class="love-photo-card">
+      <div class="love-photo">
+        <img src="me.jpg" alt="Me">
+      </div>
+
+      <div class="love-photo-text">
+        <span>From me</span>
+        <h3>Still choosing you. Every single time.</h3>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+ <!-- =====================================================
+     PROJUKTA — SEALED LOVE LETTER
+     TEMPORARY LOVE SECTION
+     ===================================================== -->
+
+<section class="love-letter-section" id="love-letter">
+
+  <div class="love-letter-heading">
+    <span>A little something for you</span>
+    <h2>There’s a letter waiting for you. <span>♡</span></h2>
+    <p>Some feelings are better written than spoken.</p>
+  </div>
+
+  <div class="love-envelope-wrap">
+
+    <button class="love-envelope" id="loveEnvelope" type="button"
+            aria-label="Open your love letter">
+
+      <div class="envelope-back"></div>
+
+      <div class="envelope-letter">
+        <div class="letter-paper">
+
+          <span class="letter-small">To my favourite person</span>
+
+          <h3>Dear Projukta,</h3>
+
+          <div class="letter-content">
+
+            <p>
+              I don't know if words can ever fully explain what you mean to me,
+              but I still want to try.
+            </p>
+
+            <p>
+              You became someone incredibly special to me — someone whose
+              presence can make an ordinary day feel different, someone I
+              genuinely don't want to lose.
+            </p>
+
+            <p>
+              We've had our beautiful moments, our silly moments, our arguments,
+              our laughter, and even days when understanding each other wasn't
+              easy. But through all of it, one feeling has stayed true:
+              <strong>I love you.</strong>
+            </p>
+
+            <p>
+              I don't need us to be perfect. I just want us to be real.
+              I want more memories, more laughter, more little moments,
+              and more ordinary days that become beautiful simply because
+              we're together.
+            </p>
+
+            <p>
+              And if life ever gets difficult, I hope you remember that
+              I will still want to find my way back to you.
+            </p>
+
+            <p class="letter-heart-line">
+              I love you, Projukta.
+              <br>
+              And I really, truly don't want to lose you. ❤️
+            </p>
+
+          </div>
+
+          <div class="letter-signature">
+            <span>With all my heart,</span>
+            <strong>Saddam ❤️</strong>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="envelope-front"></div>
+
+      <div class="envelope-flap"></div>
+
+      <div class="envelope-seal">♥</div>
+
+    </button>
+
+    <p class="envelope-hint" id="envelopeHint">
+      Tap the envelope to open your letter ♡
+    </p>
+
+  </div>
+
+</section>   
     <!-- =====================================================
          SERVICES
          ===================================================== -->
@@ -4225,6 +5256,32 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(function () {
       loveIntro.style.display = 'none';
     }, 1000);
+
+  });
+
+});
+
+    /* =====================================================
+   PROJUKTA — LOVE LETTER OPENING
+   PART 4C
+   ===================================================== */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  const envelope = document.getElementById('loveEnvelope');
+  const hint = document.getElementById('envelopeHint');
+
+  if (!envelope) return;
+
+  envelope.addEventListener('click', function () {
+
+    if (envelope.classList.contains('open')) return;
+
+    envelope.classList.add('open');
+
+    if (hint) {
+      hint.textContent = 'A letter, from my heart to yours ♡';
+    }
 
   });
 

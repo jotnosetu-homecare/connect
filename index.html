@@ -2381,56 +2381,6 @@
   cursor: pointer;
   backdrop-filter: blur(5px);
 }
-  @media (min-width: 901px) {
-  .service-video video {
-    cursor: pointer;
-  }
-
-  .service-video video::-webkit-media-controls-panel {
-    opacity: 1 !important;
-  }
-
-  .service-video video::-webkit-media-controls-play-button {
-    opacity: 1 !important;
-    display: block !important;
-  }
-
-  .video-volume-control {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  z-index: 9999 !important;
-}
-
-.video-mute-btn {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  z-index: 10000 !important;
-} 
-.service-video {
-  position: relative !important;
-}
-
-.video-mute-btn {
-  position: absolute !important;
-  top: 12px !important;
-  right: 12px !important;
-  z-index: 99999 !important;
-  width: 32px !important;
-  height: 32px !important;
-  padding: 0 !important;
-  border: none !important;
-  border-radius: 50% !important;
-  background: rgba(0,0,0,.55) !important;
-  color: #fff !important;
-  font-size: 15px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  cursor: pointer !important;
-  pointer-events: auto !important;
-}
   .video-play-btn {
   position: absolute;
   left: 50%;
@@ -2454,29 +2404,15 @@
 
 .video-play-btn.show {
   display: flex;
-  pointer-events: auto;
-  animation: videoIconFade 900ms ease forwards;
+  opacity: 1;
+  pointer-events: none;
 }
 
-@keyframes videoIconFade {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(.85);
-  }
-  20% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(.95);
-  }
+.video-play-btn.persistent {
+  opacity: 1;
+  animation: none;
 }
-     
-  </style>
+</style>
 </head>
 
 
@@ -2753,7 +2689,7 @@
     muted
     loop
     preload="metadata"
-    controls
+    playsinline
   >
  
     <source src="service-video.mp4" type="video/mp4">  
@@ -3791,7 +3727,7 @@ window.addEventListener("scroll", function () {
     menu.classList.remove("show");
   }
 }, { passive: true });
-  
+
 document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('.service-video').forEach(function (box) {
@@ -3802,22 +3738,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!video || !muteBtn || !playBtn) return;
 
-    function showPlayIcon() {
-      playBtn.textContent = video.paused ? '▶' : '⏸';
+    let iconTimer;
 
-      playBtn.classList.remove('show');
+    function hideIcon() {
+      clearTimeout(iconTimer);
+      playBtn.classList.remove('show', 'persistent');
+    }
+
+    function showPauseIcon() {
+      clearTimeout(iconTimer);
+
+      playBtn.textContent = '⏸';
+      playBtn.classList.remove('show', 'persistent');
+
+      void playBtn.offsetWidth;
+
+      playBtn.classList.add('show', 'persistent');
+    }
+
+    function showPlayIcon() {
+      clearTimeout(iconTimer);
+
+      playBtn.textContent = '▶';
+      playBtn.classList.remove('show', 'persistent');
 
       void playBtn.offsetWidth;
 
       playBtn.classList.add('show');
 
-       setTimeout(function () {
-    if (!video.paused) {
-    hideTimer = setTimeout(function () {
-      playBtn.classList.remove('show');
-    }, 1900);
-  }
-});
+      iconTimer = setTimeout(function () {
+        if (!video.paused) {
+          playBtn.classList.remove('show');
+        }
+      }, 1500);
+    }
+
+    /* Mute / Unmute */
     muteBtn.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -3826,20 +3782,21 @@ document.addEventListener('DOMContentLoaded', function () {
       muteBtn.textContent = video.muted ? '🔇' : '🔊';
     });
 
- video.addEventListener('click', function (e) {
-  e.preventDefault();
-if (e.target === video) {
-  if (video.paused) {
-    video.play();
-  } else {
-    video.pause();
-  }
+    /* Video Play / Pause */
+    video.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
 
-  showPlayIcon();
-}
-});
+      if (video.paused) {
+        video.play();
+        showPlayIcon();
+      } else {
+        video.pause();
+        showPauseIcon();
+      }
+    });
 
-
+    /* Keep mute icon updated */
     video.addEventListener('play', function () {
       muteBtn.textContent = video.muted ? '🔇' : '🔊';
     });
@@ -3848,13 +3805,14 @@ if (e.target === video) {
       muteBtn.textContent = video.muted ? '🔇' : '🔊';
     });
 
+    /* Initial mute state */
     muteBtn.textContent = video.muted ? '🔇' : '🔊';
 
   });
 
 });
+    
 </script>
- 
-
+  
 </body>
 </html>

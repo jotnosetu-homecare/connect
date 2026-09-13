@@ -3961,7 +3961,258 @@ footer {
   }
 
 }
-      
+
+    /* =========================================================
+   PROJUKTA — ROMANTIC HERO / BANNER
+   ========================================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 239, 244, 0.96),
+      rgba(255, 249, 247, 0.94)
+    ) !important;
+}
+
+/* Soft pink romantic glow */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(220, 83, 118, 0.12),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+/* Floating hearts */
+.hero::after {
+  content: "♡   ♥   ♡   ♥   ♡";
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  color: rgba(183, 55, 88, 0.10);
+  font-size: 24px;
+  letter-spacing: 2vw;
+
+  pointer-events: none;
+
+  animation: heroLoveFloat 7s ease-in-out infinite;
+}
+
+@keyframes heroLoveFloat {
+
+  0%, 100% {
+    transform: translateY(0);
+    opacity: .65;
+  }
+
+  50% {
+    transform: translateY(-12px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .hero::after {
+    font-size: 17px;
+    letter-spacing: 3vw;
+  }
+
+  .hero::before {
+    width: 280px;
+    height: 280px;
+    right: -10%;
+  }
+
+}
+
+    /* =========================================================
+   PROJUKTA — 3D LOVE BUTTON
+   ========================================================= */
+
+.hero-love-button {
+  position: absolute;
+  left: 50%;
+  bottom: 35px;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 210px;
+  padding: 13px 22px;
+
+  border-radius: 999px;
+  border: 1px solid rgba(183, 55, 88, .18);
+
+  background:
+    linear-gradient(145deg, #fff7f8, #f4d5de);
+
+  color: #8f304f;
+  text-decoration: none;
+  font-size: .82rem;
+  font-weight: 850;
+
+  box-shadow:
+    0 7px 0 #d9a9b6,
+    0 14px 25px rgba(145, 45, 72, .18),
+    inset 0 2px 5px rgba(255,255,255,.9);
+
+  z-index: 20;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.hero-love-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(145deg, #d96b89, #a82f50);
+
+  color: #fff;
+  font-size: 1rem;
+
+  box-shadow:
+    0 4px 0 #862640,
+    0 6px 12px rgba(137,39,65,.25);
+}
+
+.hero-love-text {
+  white-space: nowrap;
+}
+
+/* Hover — rises like a 3D button */
+.hero-love-button:hover {
+  transform: translate(-50%, -4px);
+
+  box-shadow:
+    0 10px 0 #d9a9b6,
+    0 18px 30px rgba(145, 45, 72, .22),
+    inset 0 2px 5px rgba(255,255,255,.9);
+}
+
+/* Click — realistic 3D press */
+.hero-love-button:active {
+  transform: translate(-50%, 3px);
+
+  box-shadow:
+    0 3px 0 #d9a9b6,
+    0 7px 14px rgba(145, 45, 72, .16);
+}
+
+@media (max-width: 560px) {
+
+  .hero-love-button {
+    bottom: 24px;
+    min-width: 190px;
+    padding: 11px 18px;
+    font-size: .75rem;
+  }
+
+  .hero-love-icon {
+    width: 30px;
+    height: 30px;
+    font-size: .9rem;
+  }
+
+}
+
+    .hero-love-button {
+  bottom: auto;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-love-button:hover {
+  transform: translate(-50%, calc(-50% - 4px));
+}
+
+.hero-love-button:active {
+  transform: translate(-50%, calc(-50% + 3px));
+}
+
+@media (max-width: 560px) {
+  .hero-love-button {
+    top: 50%;
+    bottom: auto;
+  }
+}
+
+    /* =========================================================
+   PROJUKTA — LOVE BUTTON FINAL POLISH
+   ========================================================= */
+
+.hero-love-button {
+  animation: loveButtonFloat 3s ease-in-out infinite;
+}
+
+.hero-love-icon {
+  animation: loveIconPulse 2s ease-in-out infinite;
+}
+
+@keyframes loveButtonFloat {
+  0%, 100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -6px;
+  }
+}
+
+@keyframes loveIconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* Stop animation while pressing */
+.hero-love-button:active {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-love-button,
+  .hero-love-icon {
+    animation: none;
+  }
+}
+    
 </style>
 </head>
 
@@ -4083,6 +4334,13 @@ footer {
          ===================================================== -->
 
     <section class="hero" id="home">
+
+      <!-- PROJUKTA — LOVE MOMENTS BUTTON -->
+
+<a href="#our-moments" class="hero-love-button">
+  <span class="hero-love-icon">♥</span>
+  <span class="hero-love-text">Our Little Moments</span>
+</a>
 
       <div class="container">
 
